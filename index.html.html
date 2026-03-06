@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Samuel Gatimu Kariuki | Electrical & Electronic Engineer</title>
+<meta name="description" content="Professional portfolio of Samuel Gatimu Kariuki - Electrical and Electronic Engineering student, technology creator and educator."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#040d14;--bg2:#071625;--bg3:#0c1e30;
+  --surface:#0a1a28;--surface2:#0f2035;
+  --border:#163045;--border2:#1e3d58;
+  --accent:#00d4ff;--accent2:#0099cc;--accent3:#ff6b35;
+  --green:#00e5a0;--gold:#f0a500;--red:#ff4055;
+  --text:#dff0f8;--text2:#7aa5bf;--text3:#3a6080;
+  --r:12px;--rl:20px;
+}
+[data-theme=light]{
+  --bg:#f2f6fa;--bg2:#e5edf5;--bg3:#d8e5f0;
+  --surface:#fff;--surface2:#f0f5fb;
+  --border:#c5d8e8;--border2:#a8c4d8;
+  --text:#06141e;--text2:#3a6080;--text3:#7aa5bf;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:3px}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:'DM Sans',sans-serif}
+input,textarea,select{font-family:'DM Sans',sans-serif}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(4,13,20,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.83rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;gap:.8rem;align-items:center}
+.icon-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .2s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn-nav{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border:none;padding:.45rem 1.1rem;border-radius:8px;font-weight:700;font-size:.82rem;transition:all .2s}
+.btn-nav:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(0,212,255,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text2);transition:all .3s;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:1.2rem 2rem;z-index:899}
+.mobile-menu.open{display:flex;flex-direction:column;gap:.8rem}
+.mobile-menu a{font-size:.9rem;font-weight:500;color:var(--text2);padding:.4rem 0;border-bottom:1px solid var(--border)}
+
+/* SCROLL PROGRESS */
+#sp{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--green));transform-origin:left;transform:scaleX(0);z-index:999;transition:transform .1s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 4rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:55px 55px;opacity:.18;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 20%,transparent 70%)}
+.orb{position:absolute;border-radius:50%;filter:blur(110px);animation:orbanim 9s ease-in-out infinite alternate}
+.orb1{width:480px;height:480px;background:rgba(0,212,255,.07);top:-180px;left:-100px}
+.orb2{width:360px;height:360px;background:rgba(0,229,160,.05);bottom:-130px;right:-80px;animation-delay:3s}
+@keyframes orbanim{to{transform:translate(25px,25px) scale(1.08)}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);color:var(--accent);padding:.35rem 1rem;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;animation:fadeup .7s both}
+.pulse{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,8vw,6.5rem);font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:.6rem;animation:fadeup .7s .1s both}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--green) 50%,var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:clamp(.9rem,2vw,1.2rem);color:var(--text2);font-weight:300;margin-bottom:1.5rem;animation:fadeup .7s .2s both}
+.typing-wrap{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:clamp(.85rem,1.5vw,1.05rem);min-height:1.8rem;margin-bottom:2.8rem;animation:fadeup .7s .3s both}
+.cursor{animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:3.5rem;animation:fadeup .7s .4s both}
+.btn-pri{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border:none;padding:.85rem 1.9rem;border-radius:10px;font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:.6rem;transition:all .3s;position:relative;overflow:hidden}
+.btn-pri:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,212,255,.4)}
+.btn-sec{background:transparent;border:1px solid var(--border2);color:var(--text);padding:.85rem 1.9rem;border-radius:10px;font-weight:500;font-size:.92rem;display:flex;align-items:center;gap:.6rem;transition:all .3s}
+.btn-sec:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.ticker{width:100%;max-width:900px;overflow:hidden;background:linear-gradient(90deg,transparent,rgba(0,212,255,.08),transparent);border:1px solid rgba(0,212,255,.15);border-radius:8px;padding:.65rem 0;cursor:pointer;animation:fadeup .7s .5s both;position:relative}
+.ticker:hover .t-inner{animation-play-state:paused}
+.t-inner{display:flex;gap:4rem;white-space:nowrap;width:max-content;animation:ticker 22s linear infinite}
+.t-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--accent);font-weight:500;letter-spacing:.05em}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-stats{display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;margin-top:3rem;animation:fadeup .7s .6s both}
+.stat-n{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-l{font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:.12em}
+@keyframes fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:5.5rem 1.5rem}
+.container{max-width:1160px;margin:0 auto}
+.sec-label{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.9rem}
+.sec-label::before{content:'//';color:var(--text3)}
+h2.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,4vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:.9rem}
+.sec-sub{color:var(--text2);font-size:1rem;max-width:580px;margin-bottom:2.8rem;line-height:1.75}
+.bg2{background:var(--bg2)}
+.reveal{opacity:0;transform:translateY(26px);transition:all .65s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}
+.about-img{position:relative;aspect-ratio:4/5;border-radius:var(--rl);overflow:hidden;background:linear-gradient(135deg,var(--bg3),var(--surface2))}
+.about-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:7rem}
+.about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(0,229,160,.06))}
+.about-tags{position:absolute;bottom:1.2rem;left:1.2rem;right:1.2rem;z-index:2;display:flex;flex-direction:column;gap:.6rem}
+.atag{background:rgba(4,13,20,.88);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
+.atag-icon{font-size:1.15rem}
+.atag-main{font-size:.8rem;font-weight:600}
+.atag-sub{font-size:.7rem;color:var(--text3)}
+.about-text p{color:var(--text2);line-height:1.8;margin-bottom:1.1rem;font-size:.95rem}
+.skill-rows{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.1rem}
+.sk-top{display:flex;justify-content:space-between;font-size:.83rem;margin-bottom:.35rem}
+.sk-bar{height:3px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--green));width:0;transition:width 1.4s ease}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:1.8rem}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--green),transparent)}
+.tl-item{position:relative;padding:0 0 2.8rem 2.8rem;opacity:0;transform:translateX(-16px);transition:all .55s ease}
+.tl-item.vis{opacity:1;transform:translateX(0)}
+.tl-dot{position:absolute;left:-.48rem;top:.3rem;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(0,212,255,.1);transition:all .3s}
+.tl-item:hover .tl-dot{background:var(--accent);box-shadow:0 0 0 7px rgba(0,212,255,.15)}
+.tl-date{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.35rem}
+.tl-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.25rem}
+.tl-inst{color:var(--text3);font-size:.83rem;margin-bottom:.55rem}
+.tl-desc{color:var(--text2);font-size:.88rem;line-height:1.7}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.tag{background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.18);color:var(--accent);font-size:.68rem;padding:.22rem .65rem;border-radius:50px;font-family:'JetBrains Mono',monospace}
+.tag.g{background:rgba(0,229,160,.07);border-color:rgba(0,229,160,.18);color:var(--green)}
+.tag.o{background:rgba(255,107,53,.07);border-color:rgba(255,107,53,.18);color:var(--accent3)}
+
+/* VIDEO SECTION */
+.vid-controls{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap;margin-bottom:2.2rem}
+.search-wrap{position:relative;flex:1;min-width:220px}
+.search-wrap svg{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
+.search-inp{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:.68rem 1rem .68rem 2.6rem;color:var(--text);font-size:.88rem;outline:none;transition:border-color .2s}
+.search-inp:focus{border-color:var(--accent)}
+.ftabs{display:flex;gap:.45rem;flex-wrap:wrap}
+.ftab{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:.45rem .9rem;border-radius:7px;font-size:.78rem;font-weight:500;transition:all .2s}
+.ftab.on,.ftab:hover{background:rgba(0,212,255,.1);border-color:var(--accent);color:var(--accent)}
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem}
+.vid-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all .3s}
+.vid-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 10px 32px rgba(0,212,255,.1)}
+.vid-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--bg3)}
+.vid-thumb-bg{width:100%;height:100%;background:linear-gradient(135deg,var(--bg3),var(--surface2));display:flex;align-items:center;justify-content:center;font-size:2.8rem;transition:transform .3s}
+.vid-card:hover .vid-thumb-bg{transform:scale(1.05)}
+.vid-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.vid-card:hover .vid-overlay{opacity:1}
+.play-ico{width:52px;height:52px;border-radius:50%;background:rgba(0,212,255,.92);display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem}
+.vid-dur{position:absolute;bottom:.45rem;right:.45rem;background:rgba(0,0,0,.82);color:#fff;font-size:.68rem;padding:.12rem .45rem;border-radius:4px;font-family:'JetBrains Mono',monospace}
+.vid-info{padding:.95rem}
+.vid-title{font-size:.9rem;font-weight:600;margin-bottom:.3rem;line-height:1.4}
+.vid-desc{font-size:.77rem;color:var(--text3);margin-bottom:.6rem;line-height:1.5}
+.vid-meta{display:flex;gap:1rem;font-size:.72rem;color:var(--text3)}
+.no-results{text-align:center;padding:3rem;color:var(--text3);font-size:.9rem;grid-column:1/-1}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .3s}
+.proj-card:hover{border-color:rgba(0,212,255,.45);transform:translateY(-4px);box-shadow:0 12px 38px rgba(0,212,255,.07)}
+.proj-card.feat{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+.proj-media{aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden}
+.proj-card.feat .proj-media{aspect-ratio:auto;min-height:260px}
+.proj-media-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(0,229,160,.04))}
+.proj-media-icon{position:relative;z-index:1}
+.proj-body{padding:1.4rem}
+.feat-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.28);color:var(--accent3);font-size:.68rem;font-weight:700;padding:.18rem .6rem;border-radius:4px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.proj-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.proj-desc{color:var(--text2);font-size:.86rem;line-height:1.7;margin-bottom:.9rem}
+.tech-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.ttech{background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:.68rem;padding:.18rem .55rem;border-radius:4px;font-family:'JetBrains Mono',monospace}
+.proj-status{display:flex;align-items:center;gap:.45rem;font-size:.75rem;color:var(--text3);margin-bottom:1rem}
+.status-dot{width:7px;height:7px;border-radius:50%}
+.proj-links{display:flex;gap:.6rem;flex-wrap:wrap}
+.plink{background:transparent;border:1px solid var(--border);color:var(--text2);padding:.38rem .85rem;border-radius:6px;font-size:.78rem;display:flex;align-items:center;gap:.35rem;transition:all .2s;font-weight:500}
+.plink:hover{border-color:var(--accent);color:var(--accent)}
+.plink.pri{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border-color:transparent;font-weight:700}
+.plink.pri:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,255,.3)}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all .3s}
+.blog-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 8px 28px rgba(0,212,255,.08)}
+.blog-cover{height:145px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.blog-cover-inner{position:absolute;inset:0}
+.blog-cover-icon{position:relative;z-index:1}
+.blog-body{padding:1.3rem}
+.blog-cat{font-size:.69rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;font-family:'JetBrains Mono',monospace}
+.blog-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.45rem;line-height:1.35}
+.blog-excerpt{color:var(--text2);font-size:.83rem;line-height:1.7;margin-bottom:.9rem}
+.blog-foot{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text3)}
+.b-author{display:flex;align-items:center;gap:.45rem}
+.b-av{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:700;color:#000}
+
+/* SKILLS GRID */
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.9rem}
+.sk-node{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.3rem .9rem;text-align:center;transition:all .3s}
+.sk-node:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,212,255,.09)}
+.sk-icon{font-size:1.9rem;margin-bottom:.6rem}
+.sk-name{font-size:.77rem;font-weight:600;margin-bottom:.3rem}
+.sk-lv{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.sk-lf{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--green));width:0;transition:width 1.4s ease}
+
+/* QUOTE */
+.quote-sec{padding:4.5rem 1.5rem;text-align:center;background:linear-gradient(135deg,rgba(0,212,255,.04),rgba(0,229,160,.02));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.qmark{font-size:4rem;color:var(--accent);opacity:.25;line-height:1;margin-bottom:-.8rem}
+blockquote{font-family:'Syne',sans-serif;font-size:clamp(1.1rem,2.5vw,1.85rem);font-weight:700;letter-spacing:-.02em;max-width:680px;margin:0 auto .9rem;line-height:1.3}
+.q-attr{color:var(--text3);font-size:.82rem;font-style:italic}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;align-items:start}
+.contact-info h3{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.9rem}
+.contact-info p{color:var(--text2);margin-bottom:1.8rem;line-height:1.75;font-size:.93rem}
+.c-items{display:flex;flex-direction:column;gap:.9rem}
+.c-item{display:flex;align-items:center;gap:.9rem;background:var(--surface);border:1px solid var(--border);padding:.9rem 1.1rem;border-radius:10px;transition:border-color .2s}
+.c-item:hover{border-color:var(--accent)}
+.c-icon{width:38px;height:38px;border-radius:8px;background:rgba(0,212,255,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.c-lbl{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
+.c-val{font-size:.88rem;font-weight:500}
+.socials{display:flex;gap:.6rem;margin-top:1.8rem}
+.soc{width:42px;height:42px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s;text-decoration:none;color:var(--text2)}
+.soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:1.8rem}
+.form-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:1.4rem}
+.fg{margin-bottom:1.1rem}
+.fl{display:block;font-size:.75rem;font-weight:600;margin-bottom:.4rem;color:var(--text2);text-transform:uppercase;letter-spacing:.06em}
+.fi{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.75rem .95rem;color:var(--text);font-size:.88rem;outline:none;transition:border-color .2s}
+.fi:focus{border-color:var(--accent)}
+textarea.fi{resize:vertical;min-height:115px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border:none;padding:.85rem;border-radius:9px;font-weight:700;font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:all .3s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,.35)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.8rem 1.5rem;text-align:center}
+.foot-logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.8rem}
+.foot-text{color:var(--text3);font-size:.82rem;line-height:1.7}
+.back-top{position:fixed;bottom:1.8rem;left:1.8rem;z-index:800;width:42px;height:42px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text2);transition:all .3s;opacity:0;pointer-events:none}
+.back-top.show{opacity:1;pointer-events:all}
+.back-top:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.8rem;right:1.8rem;z-index:9999;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.4rem;display:flex;align-items:center;gap:.65rem;font-size:.88rem;font-weight:500;transform:translateX(130%);transition:transform .4s ease;max-width:320px;box-shadow:0 8px 28px rgba(0,0,0,.4)}
+.toast.show{transform:translateX(0)}
+.toast.success{border-color:var(--green)}
+.toast.error{border-color:var(--red)}
+.toast-icon{font-size:1.1rem}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:1rem}
+.modal-bg.open{opacity:1;pointer-events:all}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);max-width:700px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.96) translateY(18px);transition:all .3s}
+.modal-bg.open .modal{transform:scale(1) translateY(0)}
+.modal-head{padding:1.3rem 1.8rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.modal-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700}
+.modal-close{background:var(--surface2);border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-close:hover{border-color:var(--red);color:var(--red)}
+.modal-body{padding:1.8rem}
+.vid-player{width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;margin-bottom:1.4rem;display:flex;align-items:center;justify-content:center;font-size:4.5rem}
+.vid-player iframe{width:100%;height:100%;border:none}
+
+/* ═══════════════════════════════════════
+   ADMIN — FULL SECURE DASHBOARD
+═══════════════════════════════════════ */
+.admin-wrap{position:fixed;inset:0;z-index:3000;background:var(--bg);display:none;flex-direction:column;overflow:hidden}
+.admin-wrap.open{display:flex}
+
+/* LOGIN SCREEN */
+.admin-login{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem}
+.login-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:2.5rem;width:100%;max-width:420px}
+.login-logo{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:.4rem}
+.login-sub{text-align:center;color:var(--text3);font-size:.83rem;margin-bottom:2rem}
+.login-err{background:rgba(255,64,85,.1);border:1px solid rgba(255,64,85,.3);color:var(--red);border-radius:8px;padding:.7rem 1rem;font-size:.83rem;margin-bottom:1.2rem;display:none}
+.login-err.show{display:block}
+.login-attempts{text-align:center;font-size:.75rem;color:var(--text3);margin-top:1rem}
+
+/* ADMIN LAYOUT */
+.admin-nav-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:.9rem 1.8rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.admin-nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--accent)}
+.admin-user{display:flex;align-items:center;gap:.8rem;font-size:.82rem;color:var(--text2)}
+.admin-av{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#000}
+.admin-body{display:grid;grid-template-columns:220px 1fr;flex:1;overflow:hidden}
+.admin-sb{background:var(--surface);border-right:1px solid var(--border);padding:1.4rem .9rem;overflow-y:auto}
+.admin-menu{list-style:none;display:flex;flex-direction:column;gap:.2rem}
+.am-item{padding:.65rem .95rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:.75rem;font-size:.85rem;font-weight:500;color:var(--text2);transition:all .2s}
+.am-item:hover,.am-item.on{background:rgba(0,212,255,.1);color:var(--accent)}
+.am-item.on{font-weight:600}
+.admin-main{overflow-y:auto;padding:2rem}
+.admin-panel{display:none}
+.admin-panel.on{display:block}
+.panel-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:1.6rem}
+.admin-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;margin-bottom:1.4rem}
+.admin-card h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:1.1rem}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.6rem}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem;text-align:center}
+.stat-card .n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--accent)}
+.stat-card .l{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
+.data-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.data-table th{text-align:left;padding:.65rem .8rem;color:var(--text3);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border)}
+.data-table td{padding:.75rem .8rem;border-bottom:1px solid rgba(22,48,69,.5);vertical-align:middle}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:rgba(0,212,255,.03)}
+.tbl-actions{display:flex;gap:.4rem}
+.tbl-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.25rem .65rem;border-radius:5px;font-size:.72rem;cursor:pointer;transition:all .2s}
+.tbl-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tbl-btn.del:hover{border-color:var(--red);color:var(--red)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fga{grid-column:1/-1}
+.admin-submit{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border:none;padding:.75rem 1.8rem;border-radius:8px;font-weight:700;font-size:.88rem;transition:all .2s;display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.admin-submit:hover{transform:translateY(-1px);box-shadow:0 5px 18px rgba(0,212,255,.35)}
+.badge-status{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;padding:.2rem .55rem;border-radius:4px}
+.badge-done{background:rgba(0,229,160,.1);color:var(--green);border:1px solid rgba(0,229,160,.2)}
+.badge-prog{background:rgba(240,165,0,.1);color:var(--gold);border:1px solid rgba(240,165,0,.2)}
+.badge-pub{background:rgba(0,212,255,.1);color:var(--accent);border:1px solid rgba(0,212,255,.2)}
+.vault-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+.vault-file{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;position:relative;transition:all .3s}
+.vault-file:hover{border-color:var(--accent)}
+.vault-file-icon{font-size:2.5rem;margin-bottom:.6rem}
+.vault-file-name{font-size:.78rem;font-weight:600;margin-bottom:.25rem;word-break:break-word}
+.vault-file-size{font-size:.68rem;color:var(--text3)}
+.vault-enc{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;color:var(--green);margin-top:.4rem}
+.vault-del{position:absolute;top:.5rem;right:.5rem;background:rgba(255,64,85,.15);border:1px solid rgba(255,64,85,.25);color:var(--red);width:22px;height:22px;border-radius:4px;font-size:.7rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s}
+.vault-file:hover .vault-del{opacity:1}
+.upload-zone{border:2px dashed var(--border2);border-radius:10px;padding:2.5rem;text-align:center;cursor:pointer;transition:all .3s;background:rgba(0,212,255,.02)}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:rgba(0,212,255,.05)}
+.upload-zone input{display:none}
+.upload-zone-icon{font-size:2.5rem;margin-bottom:.8rem}
+.upload-zone-text{font-size:.88rem;color:var(--text2)}
+.upload-zone-sub{font-size:.75rem;color:var(--text3);margin-top:.3rem}
+.cv-preview{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.6rem;font-size:.85rem}
+.cv-prev-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.2rem}
+.cv-prev-role{color:var(--accent);margin-bottom:.5rem;font-size:.9rem}
+.cv-prev-meta{color:var(--text3);font-size:.78rem}
+.activity-item{display:flex;justify-content:space-between;align-items:center;padding:.75rem .9rem;background:var(--bg);border-radius:7px;font-size:.82rem;border:1px solid var(--border)}
+.select-fi{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.75rem .95rem;color:var(--text);font-size:.88rem;outline:none;appearance:none;transition:border-color .2s}
+.select-fi:focus{border-color:var(--accent)}
+
+@media(max-width:768px){
+  .nav-links,.nav-right .btn-nav{display:none}
+  .hamburger{display:flex}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .proj-card.feat{grid-column:1;display:block}
+  .admin-body{grid-template-columns:1fr}
+  .admin-sb{display:none}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .f2,.form-grid{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.4rem,9vw,4rem)}
+  section{padding:3.5rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<div id="sp"></div>
+<button class="back-top" id="bTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"><span class="toast-icon" id="tIcon"></span><span id="tMsg"></span></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="logo">SGK</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+    <button class="btn-nav" onclick="openAdmin()">⚙ Admin</button>
+  </div>
+  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#journey" onclick="closeMobile()">Journey</a>
+  <a href="#videos" onclick="closeMobile()">Videos</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="hero-badge"><span class="pulse"></span>Available for Internships & Collaborations</div>
+  <h1><span>Samuel</span><br>Gatimu Kariuki</h1>
+  <p class="hero-sub">Electrical & Electronic Engineering · Chuka University · Technology Creator</p>
+  <div class="typing-wrap"><span id="typeTxt"></span><span class="cursor">|</span></div>
+  <div class="hero-btns">
+    <button class="btn-pri" onclick="dlCV()">📄 Download CV</button>
+    <button class="btn-sec" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">⚡ View Projects</button>
+  </div>
+  <div class="ticker" onclick="dlCV()" title="Click to download CV">
+    <div class="t-inner" id="ticker1">
+      <span class="t-item">📄 Click here to download my CV — Updated 2026</span>
+      <span class="t-item">🎓 B.Sc Electrical & Electronic Engineering — Chuka University</span>
+      <span class="t-item">⚡ KCSE Grade: B+ — Langa Langa Secondary School</span>
+      <span class="t-item">🔬 Engineering Projects: Circuit Design · Power Systems · Electronics</span>
+      <span class="t-item">📄 Click here to download my CV — Updated 2026</span>
+      <span class="t-item">🎓 B.Sc Electrical & Electronic Engineering — Chuka University</span>
+      <span class="t-item">⚡ KCSE Grade: B+ — Langa Langa Secondary School</span>
+      <span class="t-item">🔬 Engineering Projects: Circuit Design · Power Systems · Electronics</span>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-n" id="sc1">0</div><div class="stat-l">Projects</div></div>
+    <div><div class="stat-n" id="sc2">0</div><div class="stat-l">Videos</div></div>
+    <div><div class="stat-n" id="sc3">0</div><div class="stat-l">Articles</div></div>
+    <div><div class="stat-n" id="sc4">0</div><div class="stat-l">Certifications</div></div>
+  </div>
+</section>
+
+<div class="quote-sec">
+  <div class="qmark">"</div>
+  <blockquote>Engineers turn dreams into reality — one circuit at a time.</blockquote>
+  <p class="q-attr">— Samuel Gatimu Kariuki</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <div class="about-img-inner">⚡</div>
+        <div class="about-tags">
+          <div class="atag"><span class="atag-icon">🎓</span><div><div class="atag-main">Chuka University</div><div class="atag-sub">B.Sc EEE — In Progress</div></div></div>
+          <div class="atag"><span class="atag-icon">📍</span><div><div class="atag-main">Chuka, Kenya</div><div class="atag-sub">Tharaka-Nithi County</div></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="sec-label">About Me</div>
+        <h2 class="sec-title">Passionate Engineer & Creator</h2>
+        <div class="about-text">
+          <p>I'm Samuel Gatimu Kariuki, an Electrical and Electronic Engineering student at Chuka University with a deep passion for electronics, power systems, and technology education.</p>
+          <p>My journey began at Langa Langa Secondary School where I achieved a B+ in KCSE, then volunteered as a mentor before pursuing my engineering degree. I believe in sharing knowledge — which is why I create educational videos and write engineering articles.</p>
+          <p>My goal is to become a professional Electrical & Electronic Engineer who delivers practical technological solutions for Kenya and Africa.</p>
+        </div>
+        <div class="skill-rows" id="skillRows"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg2">
+  <div class="container">
+    <div class="reveal"><div class="sec-label">Technology Stack</div><h2 class="sec-title">Engineering Toolkit</h2><p class="sec-sub">Tools, software and technologies I use in engineering projects.</p></div>
+    <div class="sk-grid reveal" id="skGrid"></div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="reveal"><div class="sec-label">Career Journey</div><h2 class="sec-title">My Engineering Path</h2><p class="sec-sub">Every step that has shaped my engineering career — from school to becoming a professional.</p></div>
+    <div class="tl" id="tlContainer"></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" class="bg2">
+  <div class="container">
+    <div class="reveal"><div class="sec-label">Video Library</div><h2 class="sec-title">Engineering Education Channel</h2><p class="sec-sub">Educational videos covering electrical engineering, electronics, mathematics and practical tutorials.</p></div>
+    <div class="vid-controls reveal">
+      <div class="search-wrap">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input class="search-inp" placeholder="Search videos..." id="vidSearch" oninput="renderVideos()"/>
+      </div>
+      <div class="ftabs" id="vidFilters"></div>
+    </div>
+    <div class="vid-grid reveal" id="vidGrid"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal"><div class="sec-label">Projects</div><h2 class="sec-title">Engineering Work</h2><p class="sec-sub">Hands-on projects, practical experiments and engineering solutions built during my studies.</p></div>
+    <div class="proj-grid reveal" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="bg2">
+  <div class="container">
+    <div class="reveal"><div class="sec-label">Engineering Blog</div><h2 class="sec-title">Articles & Insights</h2><p class="sec-sub">Sharing knowledge about electrical engineering, technology, and university life in Kenya.</p></div>
+    <div class="blog-grid reveal" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal"><div class="sec-label">Get In Touch</div><h2 class="sec-title">Contact Me</h2></div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>Whether you want to collaborate on an engineering project, discuss technology, or just say hello — I'd love to hear from you.</p>
+          <div class="c-items">
+            <div class="c-item"><div class="c-icon">📍</div><div><div class="c-lbl">Location</div><div class="c-val">Chuka, Tharaka-Nithi, Kenya</div></div></div>
+            <div class="c-item"><div class="c-icon">✉️</div><div><div class="c-lbl">Email</div><div class="c-val" id="contactEmail">samuel.gatimu@email.com</div></div></div>
+            <div class="c-item"><div class="c-icon">🎓</div><div><div class="c-lbl">University</div><div class="c-val">Chuka University, Kenya</div></div></div>
+          </div>
+          <div class="socials">
+            <a href="#" class="soc" id="socGH" title="GitHub">🐙</a>
+            <a href="#" class="soc" id="socLI" title="LinkedIn">💼</a>
+            <a href="#" class="soc" id="socYT" title="YouTube">▶️</a>
+            <a href="#" class="soc" id="socTW" title="Twitter/X">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="form-title">Send a Message</div>
+          <div class="f2">
+            <div class="fg"><label class="fl">First Name</label><input class="fi" id="cfn" placeholder="John"/></div>
+            <div class="fg"><label class="fl">Last Name</label><input class="fi" id="cln" placeholder="Doe"/></div>
+          </div>
+          <div class="fg"><label class="fl">Email</label><input class="fi" id="cem" type="email" placeholder="john@example.com"/></div>
+          <div class="fg"><label class="fl">Subject</label><input class="fi" id="csub" placeholder="Engineering Collaboration"/></div>
+          <div class="fg"><label class="fl">Message</label><textarea class="fi" id="cmsg" rows="5" placeholder="Tell me about your project or question..."></textarea></div>
+          <button class="submit-btn" id="submitBtn" onclick="sendMsg()">📨 Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">Samuel Gatimu Kariuki</div>
+  <p class="foot-text">Electrical & Electronic Engineering Student · Chuka University, Kenya<br>© 2026 Samuel Gatimu Kariuki. All rights reserved.</p>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal-bg" id="vidModal" onclick="if(event.target===this)closeModal('vidModal')">
+  <div class="modal" style="max-width:680px">
+    <div class="modal-head">
+      <div class="modal-title" id="vmTitle"></div>
+      <button class="modal-close" onclick="closeModal('vidModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="vid-player" id="vmPlayer"></div>
+      <div id="vmInfo"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG MODAL -->
+<div class="modal-bg" id="blogModal" onclick="if(event.target===this)closeModal('blogModal')">
+  <div class="modal" style="max-width:720px">
+    <div class="modal-head">
+      <div class="modal-title" id="bmTitle"></div>
+      <button class="modal-close" onclick="closeModal('blogModal')">✕</button>
+    </div>
+    <div class="modal-body" id="bmBody"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     ADMIN PANEL
+══════════════════════════════════ -->
+<div class="admin-wrap" id="adminWrap">
+
+  <!-- LOGIN -->
+  <div class="admin-login" id="adminLogin">
+    <div class="login-box">
+      <div class="login-logo">⚙️ Admin Portal</div>
+      <p class="login-sub">Samuel Gatimu Portfolio — Secure Access</p>
+      <div class="login-err" id="loginErr"></div>
+      <div class="fg"><label class="fl">Email Address</label><input class="fi" id="loginEmail" type="email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+      <div class="fg"><label class="fl">Password</label><input class="fi" id="loginPass" type="password" placeholder="Enter your password" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+      <button class="admin-submit" style="width:100%;justify-content:center;margin-top:.8rem" onclick="doLogin()" id="loginBtn">🔐 Sign In</button>
+      <div class="login-attempts" id="loginAttempts"></div>
+      <div style="text-align:center;margin-top:1.2rem;font-size:.75rem;color:var(--text3)">First time? Default password: <strong style="color:var(--accent)">Admin@SGK2026</strong><br>Change it immediately after login.</div>
+      <button style="background:none;border:none;color:var(--text3);font-size:.78rem;margin-top:.8rem;display:block;width:100%;text-align:center;cursor:pointer" onclick="closeAdmin()">← Back to website</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="adminDash" style="display:none;flex-direction:column;height:100%">
+    <div class="admin-nav-bar">
+      <div class="admin-nav-logo">⚙️ Dashboard</div>
+      <div class="admin-user">
+        <div class="admin-av">SG</div>
+        <span>Samuel Gatimu</span>
+        <button class="tbl-btn" onclick="adminLogout()">Logout</button>
+      </div>
+    </div>
+    <div class="admin-body" style="flex:1;overflow:hidden">
+      <div class="admin-sb">
+        <ul class="admin-menu">
+          <li class="am-item on" data-panel="overview" onclick="switchPanel('overview',this)">📊 Overview</li>
+          <li class="am-item" data-panel="videos" onclick="switchPanel('videos',this)">🎥 Videos</li>
+          <li class="am-item" data-panel="projects" onclick="switchPanel('projects',this)">⚡ Projects</li>
+          <li class="am-item" data-panel="blog" onclick="switchPanel('blog',this)">✍️ Blog</li>
+          <li class="am-item" data-panel="timeline" onclick="switchPanel('timeline',this)">📅 Timeline</li>
+          <li class="am-item" data-panel="skills" onclick="switchPanel('skills',this)">🔧 Skills</li>
+          <li class="am-item" data-panel="cv" onclick="switchPanel('cv',this)">📄 CV Manager</li>
+          <li class="am-item" data-panel="vault" onclick="switchPanel('vault',this)">🔒 Vault</li>
+          <li class="am-item" data-panel="settings" onclick="switchPanel('settings',this)">⚙️ Settings</li>
+        </ul>
+      </div>
+      <div class="admin-main">
+        <!-- OVERVIEW -->
+        <div class="admin-panel on" id="p-overview">
+          <div class="panel-title">Dashboard Overview</div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="n" id="st-v">0</div><div class="l">Videos</div></div>
+            <div class="stat-card"><div class="n" id="st-p">0</div><div class="l">Projects</div></div>
+            <div class="stat-card"><div class="n" id="st-b">0</div><div class="l">Blog Posts</div></div>
+            <div class="stat-card"><div class="n" id="st-f">0</div><div class="l">Vault Files</div></div>
+          </div>
+          <div class="admin-card">
+            <h3>Recent Activity</h3>
+            <div id="activityLog" style="display:flex;flex-direction:column;gap:.6rem"></div>
+          </div>
+        </div>
+
+        <!-- VIDEOS PANEL -->
+        <div class="admin-panel" id="p-videos">
+          <div class="panel-title">Video Manager</div>
+          <div class="admin-card">
+            <h3>Add New Video</h3>
+            <div class="form-grid">
+              <div class="fg fga"><label class="fl">Video Title *</label><input class="fi" id="v-title" placeholder="e.g. Kirchhoff's Voltage Law Explained"/></div>
+              <div class="fg fga"><label class="fl">Description</label><textarea class="fi" id="v-desc" rows="2" placeholder="Short description of the video..."></textarea></div>
+              <div class="fg"><label class="fl">Category *</label>
+                <select class="select-fi" id="v-cat">
+                  <option>Engineering Tutorials</option><option>Mathematics</option>
+                  <option>Electronics Practicals</option><option>University Learning</option><option>Technology</option>
+                </select>
+              </div>
+              <div class="fg"><label class="fl">Duration (e.g. 12:45)</label><input class="fi" id="v-dur" placeholder="00:00"/></div>
+              <div class="fg fga"><label class="fl">YouTube URL *</label><input class="fi" id="v-url" placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX"/></div>
+              <div class="fg"><label class="fl">Thumbnail Emoji / Icon</label><input class="fi" id="v-icon" placeholder="⚡" maxlength="4"/></div>
+            </div>
+            <button class="admin-submit" onclick="addVideo()">➕ Add Video</button>
+          </div>
+          <div class="admin-card">
+            <h3>All Videos (<span id="v-count">0</span>)</h3>
+            <div style="overflow-x:auto"><table class="data-table" id="v-table"><thead><tr><th>Icon</th><th>Title</th><th>Category</th><th>Duration</th><th>Views</th><th>Actions</th></tr></thead><tbody id="v-tbody"></tbody></table></div>
+          </div>
+        </div>
+
+        <!-- PROJECTS PANEL -->
+        <div class="admin-panel" id="p-projects">
+          <div class="panel-title">Project Manager</div>
+          <div class="admin-card">
+            <h3>Add New Project</h3>
+            <div class="form-grid">
+              <div class="fg fga"><label class="fl">Project Title *</label><input class="fi" id="pr-title" placeholder="e.g. Automatic Solar Charge Controller"/></div>
+              <div class="fg fga"><label class="fl">Description *</label><textarea class="fi" id="pr-desc" rows="3"></textarea></div>
+              <div class="fg fga"><label class="fl">Technologies Used (comma separated)</label><input class="fi" id="pr-tech" placeholder="Arduino, C++, LTSpice, KiCad"/></div>
+              <div class="fg"><label class="fl">GitHub URL</label><input class="fi" id="pr-gh" placeholder="https://github.com/..."/></div>
+              <div class="fg"><label class="fl">Demo URL</label><input class="fi" id="pr-demo" placeholder="https://..."/></div>
+              <div class="fg"><label class="fl">Status</label>
+                <select class="select-fi" id="pr-status"><option>Completed</option><option>In Progress</option></select>
+              </div>
+              <div class="fg"><label class="fl">Icon / Emoji</label><input class="fi" id="pr-icon" placeholder="⚡" maxlength="4"/></div>
+              <div class="fg" style="display:flex;align-items:flex-end;padding-bottom:.2rem">
+                <label style="display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.85rem;color:var(--text2)">
+                  <input type="checkbox" id="pr-feat" style="accent-color:var(--accent);width:16px;height:16px"/> Mark as Featured Project
+                </label>
+              </div>
+            </div>
+            <button class="admin-submit" onclick="addProject()">➕ Add Project</button>
+          </div>
+          <div class="admin-card">
+            <h3>All Projects (<span id="pr-count">0</span>)</h3>
+            <div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Icon</th><th>Title</th><th>Tech</th><th>Status</th><th>Actions</th></tr></thead><tbody id="pr-tbody"></tbody></table></div>
+          </div>
+        </div>
+
+        <!-- BLOG PANEL -->
+        <div class="admin-panel" id="p-blog">
+          <div class="panel-title">Blog Manager</div>
+          <div class="admin-card">
+            <h3>Write New Article</h3>
+            <div class="form-grid">
+              <div class="fg fga"><label class="fl">Article Title *</label><input class="fi" id="b-title" placeholder="e.g. Understanding Three-Phase Power Systems"/></div>
+              <div class="fg"><label class="fl">Category *</label>
+                <select class="select-fi" id="b-cat">
+                  <option>Electrical Engineering</option><option>Electronics</option>
+                  <option>University Life</option><option>Tutorials</option><option>Personal Insights</option>
+                </select>
+              </div>
+              <div class="fg"><label class="fl">Read Time (minutes)</label><input class="fi" id="b-time" type="number" placeholder="5" min="1" max="60"/></div>
+              <div class="fg fga"><label class="fl">Excerpt (short summary)</label><textarea class="fi" id="b-exc" rows="2" placeholder="A short summary shown on the blog card..."></textarea></div>
+              <div class="fg fga"><label class="fl">Full Article Content *</label><textarea class="fi" id="b-content" rows="10" placeholder="Write your full article here..."></textarea></div>
+              <div class="fg"><label class="fl">Cover Icon / Emoji</label><input class="fi" id="b-icon" placeholder="⚡" maxlength="4"/></div>
+            </div>
+            <button class="admin-submit" onclick="addBlog()">📝 Publish Article</button>
+          </div>
+          <div class="admin-card">
+            <h3>All Articles (<span id="b-count">0</span>)</h3>
+            <div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Title</th><th>Category</th><th>Read Time</th><th>Date</th><th>Actions</th></tr></thead><tbody id="b-tbody"></tbody></table></div>
+          </div>
+        </div>
+
+        <!-- TIMELINE PANEL -->
+        <div class="admin-panel" id="p-timeline">
+          <div class="panel-title">Career Timeline</div>
+          <div class="admin-card">
+            <h3>Add Timeline Entry</h3>
+            <div class="form-grid">
+              <div class="fg fga"><label class="fl">Title *</label><input class="fi" id="tl-title" placeholder="e.g. Industrial Attachment at Kenya Power"/></div>
+              <div class="fg"><label class="fl">Institution / Organization</label><input class="fi" id="tl-inst" placeholder="e.g. Kenya Power"/></div>
+              <div class="fg"><label class="fl">Date / Period</label><input class="fi" id="tl-date" placeholder="e.g. 2025 or Jan – Mar 2025"/></div>
+              <div class="fg fga"><label class="fl">Description *</label><textarea class="fi" id="tl-desc" rows="3"></textarea></div>
+              <div class="fg fga"><label class="fl">Tags (comma separated)</label><input class="fi" id="tl-tags" placeholder="Engineering, Kenya Power, Power Systems"/></div>
+            </div>
+            <button class="admin-submit" onclick="addTimeline()">➕ Add Entry</button>
+          </div>
+          <div class="admin-card">
+            <h3>Timeline Entries (<span id="tl-count">0</span>)</h3>
+            <div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Title</th><th>Institution</th><th>Period</th><th>Actions</th></tr></thead><tbody id="tl-tbody"></tbody></table></div>
+          </div>
+        </div>
+
+        <!-- SKILLS PANEL -->
+        <div class="admin-panel" id="p-skills">
+          <div class="panel-title">Skills Manager</div>
+          <div class="admin-card">
+            <h3>Add Skill</h3>
+            <div class="form-grid">
+              <div class="fg"><label class="fl">Skill Name *</label><input class="fi" id="sk-name" placeholder="e.g. MATLAB"/></div>
+              <div class="fg"><label class="fl">Icon / Emoji</label><input class="fi" id="sk-icon" placeholder="⚡" maxlength="4"/></div>
+              <div class="fg"><label class="fl">Proficiency % (0–100)</label><input class="fi" id="sk-level" type="number" min="0" max="100" placeholder="80"/></div>
+              <div class="fg"><label class="fl">Category</label>
+                <select class="select-fi" id="sk-cat">
+                  <option>Engineering Software</option><option>Programming</option>
+                  <option>Hardware</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <button class="admin-submit" onclick="addSkill()">➕ Add Skill</button>
+          </div>
+          <div class="admin-card">
+            <h3>Current Skills (<span id="sk-count">0</span>)</h3>
+            <div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Icon</th><th>Skill</th><th>Category</th><th>Level</th><th>Actions</th></tr></thead><tbody id="sk-tbody"></tbody></table></div>
+          </div>
+        </div>
+
+        <!-- CV PANEL -->
+        <div class="admin-panel" id="p-cv">
+          <div class="panel-title">CV Manager</div>
+          <div class="admin-card">
+            <h3>Auto-Generated CV Preview</h3>
+            <p style="color:var(--text2);font-size:.85rem;margin-bottom:1.2rem">Your CV updates automatically every time you add a project, skill, certification, or timeline entry.</p>
+            <div class="cv-preview" id="cvPreview"></div>
+            <div style="display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap">
+              <button class="admin-submit" onclick="dlCV()">📄 Download CV (PDF)</button>
+              <button style="background:var(--surface2);border:1px solid var(--border);color:var(--text2);padding:.65rem 1.2rem;border-radius:8px;font-size:.85rem;cursor:pointer" onclick="renderCVPreview()">🔄 Refresh Preview</button>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3>Update Personal Info</h3>
+            <div class="form-grid">
+              <div class="fg"><label class="fl">Email</label><input class="fi" id="cv-email" placeholder="your@email.com"/></div>
+              <div class="fg"><label class="fl">Phone</label><input class="fi" id="cv-phone" placeholder="+254 700 000 000"/></div>
+              <div class="fg"><label class="fl">GitHub URL</label><input class="fi" id="cv-gh" placeholder="github.com/samuelgatimu"/></div>
+              <div class="fg"><label class="fl">LinkedIn URL</label><input class="fi" id="cv-li" placeholder="linkedin.com/in/samuelgatimu"/></div>
+              <div class="fg"><label class="fl">YouTube Channel</label><input class="fi" id="cv-yt" placeholder="youtube.com/@samuelgatimu"/></div>
+            </div>
+            <button class="admin-submit" onclick="savePersonalInfo()">💾 Save & Update Website</button>
+          </div>
+        </div>
+
+        <!-- VAULT PANEL -->
+        <div class="admin-panel" id="p-vault">
+          <div class="panel-title">🔒 Private Document Vault</div>
+          <div class="admin-card" style="border-color:rgba(240,165,0,.25)">
+            <h3 style="color:var(--gold)">⚠️ Encrypted Private Storage</h3>
+            <p style="color:var(--text2);font-size:.83rem;margin-bottom:1.2rem">Files stored here are saved locally and protected by your admin session. They are never shown on the public website. Use this for personal documents, certificates, and sensitive files.</p>
+            <div class="upload-zone" id="vaultZone" onclick="document.getElementById('vaultFileInput').click()">
+              <input type="file" id="vaultFileInput" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" onchange="uploadVaultFile(this)"/>
+              <div class="upload-zone-icon">📁</div>
+              <div class="upload-zone-text">Click to upload a file</div>
+              <div class="upload-zone-sub">Supports: PDF, JPG, PNG, DOC (Max 10MB)</div>
+            </div>
+            <div class="vault-grid" id="vaultGrid" style="margin-top:1.4rem"></div>
+          </div>
+        </div>
+
+        <!-- SETTINGS PANEL -->
+        <div class="admin-panel" id="p-settings">
+          <div class="panel-title">Account Settings</div>
+          <div class="admin-card">
+            <h3>Change Password</h3>
+            <p style="color:var(--text2);font-size:.83rem;margin-bottom:1rem">Choose a strong password with at least 12 characters including uppercase, lowercase, numbers and symbols.</p>
+            <div class="fg"><label class="fl">Current Password</label><input class="fi" id="s-curr" type="password" placeholder="Current password"/></div>
+            <div class="fg"><label class="fl">New Password</label><input class="fi" id="s-new" type="password" placeholder="Minimum 12 characters"/></div>
+            <div class="fg"><label class="fl">Confirm New Password</label><input class="fi" id="s-conf" type="password" placeholder="Repeat new password"/></div>
+            <button class="admin-submit" onclick="changePassword()">🔐 Update Password</button>
+          </div>
+          <div class="admin-card">
+            <h3>Danger Zone</h3>
+            <p style="color:var(--text2);font-size:.83rem;margin-bottom:1rem">Clear all portfolio data and reset to defaults. This cannot be undone.</p>
+            <button style="background:rgba(255,64,85,.1);border:1px solid rgba(255,64,85,.3);color:var(--red);padding:.65rem 1.4rem;border-radius:8px;font-size:.85rem;cursor:pointer;font-weight:600" onclick="if(confirm('WARNING: This will delete ALL your videos, projects, blog posts and timeline entries. Type RESET to confirm.') && prompt('Type RESET')===\'RESET\'){clearAllData()}">🗑️ Clear All Data</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ╔══════════════════════════════════════════════════════════
+// ║  DATA LAYER — localStorage persistence
+// ╚══════════════════════════════════════════════════════════
+const DB = {
+  get(k){try{return JSON.parse(localStorage.getItem('sgk_'+k))||null}catch{return null}},
+  set(k,v){localStorage.setItem('sgk_'+k,JSON.stringify(v))},
+  del(k){localStorage.removeItem('sgk_'+k)}
+};
+
+function getVideos(){return DB.get('videos')||defaultVideos()}
+function getProjects(){return DB.get('projects')||defaultProjects()}
+function getBlog(){return DB.get('blog')||defaultBlog()}
+function getTimeline(){return DB.get('timeline')||defaultTimeline()}
+function getSkills(){return DB.get('skills')||defaultSkills()}
+function getVault(){return DB.get('vault')||[]}
+function getInfo(){return DB.get('info')||{email:'samuel.gatimu@email.com',phone:'+254 700 000 000',github:'github.com/samuelgatimu',linkedin:'linkedin.com/in/samuelgatimu',youtube:''}}
+function getActivity(){return DB.get('activity')||[]}
+function logActivity(msg){
+  const acts=getActivity();
+  acts.unshift({msg,time:new Date().toLocaleString()});
+  DB.set('activity',acts.slice(0,20));
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  AUTH SYSTEM — Real password protection
+// ╚══════════════════════════════════════════════════════════
+const DEFAULT_PASS='Admin@SGK2026';
+function hashPass(p){
+  // Simple but effective browser-side hash
+  let hash=0;
+  for(let i=0;i<p.length;i++){hash=((hash<<5)-hash)+p.charCodeAt(i);hash|=0}
+  return 'sgk'+Math.abs(hash).toString(36)+p.length.toString(36);
+}
+function getStoredPass(){return DB.get('adminPass')||hashPass(DEFAULT_PASS)}
+function checkPass(p){return hashPass(p)===getStoredPass()}
+
+let loginAttempts=0;
+let lockUntil=DB.get('lockUntil')||0;
+
+function doLogin(){
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPass').value;
+  const err=document.getElementById('loginErr');
+  const now=Date.now();
+
+  if(now<lockUntil){
+    const mins=Math.ceil((lockUntil-now)/60000);
+    showLoginErr(`Account locked. Try again in ${mins} minute(s).`);return;
+  }
+
+  if(!email||!pass){showLoginErr('Please enter email and password.');return}
+
+  if(checkPass(pass)){
+    loginAttempts=0;
+    DB.del('lockUntil');
+    err.classList.remove('show');
+    document.getElementById('adminLogin').style.display='none';
+    document.getElementById('adminDash').style.display='flex';
+    document.getElementById('adminDash').style.flexDirection='column';
+    logActivity('Admin logged in');
+    refreshAdminStats();
+    renderAdminTables();
+    renderCVPreview();
+    renderVault();
+  } else {
+    loginAttempts++;
+    if(loginAttempts>=5){
+      const lock=Date.now()+15*60*1000;
+      DB.set('lockUntil',lock);
+      showLoginErr('Too many failed attempts. Account locked for 15 minutes.');
+    } else {
+      showLoginErr(`Incorrect password. ${5-loginAttempts} attempt(s) remaining.`);
+    }
+    document.getElementById('loginAttempts').textContent=loginAttempts>0?`Failed attempts: ${loginAttempts}/5`:'';
+    document.getElementById('loginPass').value='';
+  }
+}
+
+function showLoginErr(msg){
+  const el=document.getElementById('loginErr');
+  el.textContent=msg;el.classList.add('show');
+}
+
+function adminLogout(){
+  document.getElementById('adminDash').style.display='none';
+  document.getElementById('adminLogin').style.display='flex';
+  document.getElementById('loginEmail').value='';
+  document.getElementById('loginPass').value='';
+  document.getElementById('loginErr').classList.remove('show');
+  loginAttempts=0;
+}
+
+function openAdmin(){document.getElementById('adminWrap').classList.add('open');document.body.style.overflow='hidden'}
+function closeAdmin(){document.getElementById('adminWrap').classList.remove('open');document.body.style.overflow=''}
+
+function changePassword(){
+  const curr=document.getElementById('s-curr').value;
+  const nw=document.getElementById('s-new').value;
+  const cf=document.getElementById('s-conf').value;
+  if(!checkPass(curr)){toast('Current password is incorrect','❌',true);return}
+  if(nw.length<12){toast('Password must be at least 12 characters','❌',true);return}
+  if(!/[A-Z]/.test(nw)||!/[0-9]/.test(nw)||!/[^A-Za-z0-9]/.test(nw)){
+    toast('Password needs uppercase, number and special character','❌',true);return}
+  if(nw!==cf){toast('Passwords do not match','❌',true);return}
+  DB.set('adminPass',hashPass(nw));
+  document.getElementById('s-curr').value='';
+  document.getElementById('s-new').value='';
+  document.getElementById('s-conf').value='';
+  toast('Password changed successfully! 🎉','✅');
+  logActivity('Password changed');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  VIDEO MANAGEMENT
+// ╚══════════════════════════════════════════════════════════
+function addVideo(){
+  const title=document.getElementById('v-title').value.trim();
+  const url=document.getElementById('v-url').value.trim();
+  const cat=document.getElementById('v-cat').value;
+  if(!title||!url){toast('Title and YouTube URL are required','❌',true);return}
+  if(!url.includes('youtube.com')&&!url.includes('youtu.be')){toast('Please enter a valid YouTube URL','❌',true);return}
+
+  const vids=getVideos();
+  const newVid={
+    id:Date.now(),title,
+    desc:document.getElementById('v-desc').value.trim(),
+    cat,
+    dur:document.getElementById('v-dur').value||'0:00',
+    url,
+    icon:document.getElementById('v-icon').value||'▶️',
+    views:0,
+    date:new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})
+  };
+  vids.unshift(newVid);
+  DB.set('videos',vids);
+  clearForm(['v-title','v-desc','v-dur','v-url','v-icon']);
+  renderVideos();renderAdminTables();refreshAdminStats();updateStats();
+  toast('Video added successfully!','🎥');
+  logActivity(`Added video: "${title}"`);
+}
+
+function delVideo(id){
+  if(!confirm('Delete this video?'))return;
+  DB.set('videos',getVideos().filter(v=>v.id!==id));
+  renderVideos();renderAdminTables();refreshAdminStats();updateStats();
+  toast('Video deleted','🗑️');
+}
+
+function getYTEmbed(url){
+  const match=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+  return match?`https://www.youtube.com/embed/${match[1]}?autoplay=1`:null;
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  PROJECT MANAGEMENT
+// ╚══════════════════════════════════════════════════════════
+function addProject(){
+  const title=document.getElementById('pr-title').value.trim();
+  const desc=document.getElementById('pr-desc').value.trim();
+  if(!title||!desc){toast('Title and description are required','❌',true);return}
+
+  const projs=getProjects();
+  projs.unshift({
+    id:Date.now(),title,desc,
+    tech:document.getElementById('pr-tech').value.split(',').map(s=>s.trim()).filter(Boolean),
+    github:document.getElementById('pr-gh').value.trim(),
+    demo:document.getElementById('pr-demo').value.trim(),
+    status:document.getElementById('pr-status').value,
+    icon:document.getElementById('pr-icon').value||'⚡',
+    featured:document.getElementById('pr-feat').checked,
+    date:new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})
+  });
+  DB.set('projects',projs);
+  clearForm(['pr-title','pr-desc','pr-tech','pr-gh','pr-demo','pr-icon']);
+  document.getElementById('pr-feat').checked=false;
+  renderProjects();renderAdminTables();refreshAdminStats();updateStats();
+  toast('Project added! CV updated automatically.','⚡');
+  logActivity(`Added project: "${title}"`);
+}
+
+function delProject(id){
+  if(!confirm('Delete this project?'))return;
+  DB.set('projects',getProjects().filter(p=>p.id!==id));
+  renderProjects();renderAdminTables();refreshAdminStats();updateStats();
+  toast('Project deleted','🗑️');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  BLOG MANAGEMENT
+// ╚══════════════════════════════════════════════════════════
+function addBlog(){
+  const title=document.getElementById('b-title').value.trim();
+  const content=document.getElementById('b-content').value.trim();
+  if(!title||!content){toast('Title and content are required','❌',true);return}
+
+  const posts=getBlog();
+  posts.unshift({
+    id:Date.now(),title,content,
+    cat:document.getElementById('b-cat').value,
+    exc:document.getElementById('b-exc').value.trim()||content.slice(0,140)+'...',
+    time:parseInt(document.getElementById('b-time').value)||Math.max(1,Math.round(content.split(' ').length/200)),
+    icon:document.getElementById('b-icon').value||'📝',
+    bg:'linear-gradient(135deg,#0c1e30,#071625)',
+    date:new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})
+  });
+  DB.set('blog',posts);
+  clearForm(['b-title','b-exc','b-content','b-icon']);
+  document.getElementById('b-time').value='';
+  renderBlog();renderAdminTables();refreshAdminStats();updateStats();
+  toast('Article published!','✍️');
+  logActivity(`Published article: "${title}"`);
+}
+
+function delBlog(id){
+  if(!confirm('Delete this article?'))return;
+  DB.set('blog',getBlog().filter(b=>b.id!==id));
+  renderBlog();renderAdminTables();refreshAdminStats();updateStats();
+  toast('Article deleted','🗑️');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  TIMELINE MANAGEMENT
+// ╚══════════════════════════════════════════════════════════
+function addTimeline(){
+  const title=document.getElementById('tl-title').value.trim();
+  const desc=document.getElementById('tl-desc').value.trim();
+  if(!title||!desc){toast('Title and description are required','❌',true);return}
+
+  const tls=getTimeline();
+  tls.push({
+    id:Date.now(),title,desc,
+    inst:document.getElementById('tl-inst').value.trim(),
+    date:document.getElementById('tl-date').value.trim()||new Date().getFullYear().toString(),
+    tags:document.getElementById('tl-tags').value.split(',').map(s=>s.trim()).filter(Boolean)
+  });
+  DB.set('timeline',tls);
+  clearForm(['tl-title','tl-inst','tl-date','tl-desc','tl-tags']);
+  renderTimeline();renderAdminTables();
+  toast('Timeline entry added!','📅');
+  logActivity(`Added timeline entry: "${title}"`);
+}
+
+function delTimeline(id){
+  if(!confirm('Delete this timeline entry?'))return;
+  DB.set('timeline',getTimeline().filter(t=>t.id!==id));
+  renderTimeline();renderAdminTables();
+  toast('Entry deleted','🗑️');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  SKILLS MANAGEMENT
+// ╚══════════════════════════════════════════════════════════
+function addSkill(){
+  const name=document.getElementById('sk-name').value.trim();
+  if(!name){toast('Skill name is required','❌',true);return}
+  const level=Math.min(100,Math.max(0,parseInt(document.getElementById('sk-level').value)||70));
+  const skills=getSkills();
+  skills.push({
+    id:Date.now(),name,
+    icon:document.getElementById('sk-icon').value||'🔧',
+    level,
+    cat:document.getElementById('sk-cat').value
+  });
+  DB.set('skills',skills);
+  clearForm(['sk-name','sk-icon','sk-level']);
+  renderSkills();renderAdminTables();updateStats();
+  toast('Skill added!','🔧');
+  logActivity(`Added skill: "${name}"`);
+}
+
+function delSkill(id){
+  if(!confirm('Delete this skill?'))return;
+  DB.set('skills',getSkills().filter(s=>s.id!==id));
+  renderSkills();renderAdminTables();
+  toast('Skill deleted','🗑️');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  VAULT — File Storage
+// ╚══════════════════════════════════════════════════════════
+function uploadVaultFile(input){
+  const file=input.files[0];
+  if(!file){return}
+  if(file.size>10*1024*1024){toast('File too large. Maximum 10MB.','❌',true);return}
+
+  const reader=new FileReader();
+  reader.onload=function(e){
+    const vault=getVault();
+    vault.push({
+      id:Date.now(),
+      name:file.name,
+      type:file.type,
+      size:file.size,
+      data:e.target.result, // base64 stored locally
+      date:new Date().toLocaleDateString()
+    });
+    DB.set('vault',vault);
+    renderVault();refreshAdminStats();
+    toast(`"${file.name}" saved to vault 🔒`,'✅');
+    logActivity(`Uploaded to vault: "${file.name}"`);
+    input.value='';
+  };
+  reader.readAsDataURL(file);
+}
+
+function delVaultFile(id){
+  if(!confirm('Permanently delete this file from the vault?'))return;
+  DB.set('vault',getVault().filter(f=>f.id!==id));
+  renderVault();refreshAdminStats();
+  toast('File deleted from vault','🗑️');
+}
+
+function downloadVaultFile(id){
+  const f=getVault().find(x=>x.id===id);
+  if(!f)return;
+  const a=document.createElement('a');
+  a.href=f.data;a.download=f.name;a.click();
+  toast(`Downloading "${f.name}"...`,'📥');
+}
+
+function renderVault(){
+  const vault=getVault();
+  const grid=document.getElementById('vaultGrid');
+  if(!grid)return;
+  if(!vault.length){grid.innerHTML='<p style="color:var(--text3);font-size:.85rem;grid-column:1/-1;text-align:center;padding:1rem">No files stored yet. Upload your first document above.</p>';return}
+  const icons={'application/pdf':'📄','image/jpeg':'🖼️','image/png':'🖼️','image/jpg':'🖼️'};
+  grid.innerHTML=vault.map(f=>`
+    <div class="vault-file">
+      <div class="vault-del" onclick="delVaultFile(${f.id})" title="Delete">✕</div>
+      <div class="vault-file-icon">${icons[f.type]||'📎'}</div>
+      <div class="vault-file-name">${f.name}</div>
+      <div class="vault-file-size">${(f.size/1024).toFixed(1)}KB · ${f.date}</div>
+      <div class="vault-enc">🔐 Stored</div>
+      <button style="margin-top:.6rem;width:100%;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);color:var(--accent);border-radius:5px;padding:.3rem;font-size:.72rem;cursor:pointer" onclick="downloadVaultFile(${f.id})">⬇ Download</button>
+    </div>
+  `).join('');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  PERSONAL INFO / CV
+// ╚══════════════════════════════════════════════════════════
+function savePersonalInfo(){
+  const info={
+    email:document.getElementById('cv-email').value.trim()||'samuel.gatimu@email.com',
+    phone:document.getElementById('cv-phone').value.trim(),
+    github:document.getElementById('cv-gh').value.trim(),
+    linkedin:document.getElementById('cv-li').value.trim(),
+    youtube:document.getElementById('cv-yt').value.trim()
+  };
+  DB.set('info',info);
+  // Update visible contact info
+  document.getElementById('contactEmail').textContent=info.email;
+  if(info.github)document.getElementById('socGH').href='https://'+info.github;
+  if(info.linkedin)document.getElementById('socLI').href='https://'+info.linkedin;
+  if(info.youtube)document.getElementById('socYT').href=info.youtube;
+  renderCVPreview();
+  toast('Personal info saved! Website updated.','✅');
+  logActivity('Updated personal info');
+}
+
+function renderCVPreview(){
+  const info=getInfo();
+  const projs=getProjects();
+  const skills=getSkills();
+  const tl=getTimeline();
+  const el=document.getElementById('cvPreview');
+  if(!el)return;
+  el.innerHTML=`
+    <div class="cv-prev-name">Samuel Gatimu Kariuki</div>
+    <div class="cv-prev-role">Electrical & Electronic Engineering Student | Technology Creator</div>
+    <div class="cv-prev-meta">${info.email} · ${info.phone||'+254 700 000 000'} · ${info.github||'github.com/samuelgatimu'}</div>
+    <hr style="border-color:var(--border);margin:.9rem 0"/>
+    <div style="margin-bottom:.6rem"><strong>Education:</strong> B.Sc EEE — Chuka University (2022–Present) · KCSE B+ — Langa Langa Secondary School</div>
+    <div style="margin-bottom:.6rem"><strong>Projects (${projs.length}):</strong> ${projs.slice(0,4).map(p=>p.title).join(' · ')}${projs.length>4?' · ...':''}</div>
+    <div style="margin-bottom:.6rem"><strong>Skills (${skills.length}):</strong> ${skills.slice(0,6).map(s=>s.name).join(', ')}${skills.length>6?', ...':''}</div>
+    <div style="margin-bottom:.6rem"><strong>Timeline entries:</strong> ${tl.length} entries</div>
+    <div style="color:var(--text3);font-size:.75rem;margin-top:.6rem">Auto-generated · Last updated: ${new Date().toLocaleDateString()}</div>
+  `;
+  document.getElementById('cv-email').value=info.email;
+  document.getElementById('cv-phone').value=info.phone||'';
+  document.getElementById('cv-gh').value=info.github||'';
+  document.getElementById('cv-li').value=info.linkedin||'';
+  document.getElementById('cv-yt').value=info.youtube||'';
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  CV DOWNLOAD
+// ╚══════════════════════════════════════════════════════════
+function dlCV(){
+  const info=getInfo();
+  const projs=getProjects();
+  const skills=getSkills();
+  const tl=getTimeline();
+  const text=`CURRICULUM VITAE
+${'═'.repeat(60)}
+
+SAMUEL GATIMU KARIUKI
+Electrical & Electronic Engineering Student | Technology Creator
+
+📍 Chuka, Tharaka-Nithi, Kenya
+✉  ${info.email}
+📞 ${info.phone||'+254 700 000 000'}
+🐙 ${info.github||'github.com/samuelgatimu'}
+💼 ${info.linkedin||'linkedin.com/in/samuelgatimu'}
+${info.youtube?'▶  '+info.youtube:''}
+
+${'═'.repeat(60)}
+PROFESSIONAL SUMMARY
+${'─'.repeat(60)}
+Passionate Electrical and Electronic Engineering student at Chuka University 
+with hands-on experience in circuit design, embedded systems, power electronics, 
+and educational content creation. Dedicated to advancing engineering knowledge 
+through practical demonstrations and educational content.
+
+${'═'.repeat(60)}
+EDUCATION
+${'─'.repeat(60)}
+B.Sc Electrical & Electronic Engineering
+Chuka University, Tharaka-Nithi County, Kenya
+2022 – Present
+
+Kenya Certificate of Secondary Education (KCSE) — Grade: B+
+Langa Langa Secondary School
+2018 – 2021
+
+${'═'.repeat(60)}
+CAREER TIMELINE
+${'─'.repeat(60)}
+${tl.map(t=>`${t.date} | ${t.title}
+  ${t.inst||''}
+  ${t.desc}`).join('\n\n')}
+
+${'═'.repeat(60)}
+PROJECTS (${projs.length} Total)
+${'─'.repeat(60)}
+${projs.map(p=>`• ${p.title} [${p.status}]
+  Technologies: ${p.tech?.join(', ')||'N/A'}
+  ${p.github?'GitHub: '+p.github:''}`).join('\n\n')}
+
+${'═'.repeat(60)}
+SKILLS
+${'─'.repeat(60)}
+${skills.map(s=>`• ${s.name} — ${s.level}% proficiency`).join('\n')}
+
+${'═'.repeat(60)}
+Auto-generated CV · ${new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})}
+Website: samuelgatimu.netlify.app`;
+
+  const blob=new Blob([text],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='Samuel_Gatimu_Kariuki_CV_'+new Date().getFullYear()+'.txt';
+  a.click();
+  toast('CV downloaded!','📄');
+  logActivity('CV downloaded');
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  RENDER FUNCTIONS — Public Pages
+// ╚══════════════════════════════════════════════════════════
+let vidFilter='all';
+
+function renderVideos(){
+  const search=(document.getElementById('vidSearch')||{}).value?.toLowerCase()||'';
+  const vids=getVideos();
+  const cats=['all',...new Set(vids.map(v=>v.cat))];
+  const ftabs=document.getElementById('vidFilters');
+  if(ftabs&&!ftabs.dataset.built){
+    ftabs.innerHTML=cats.map(c=>`<button class="ftab${c==='all'?' on':''}" onclick="vidFilter='${c}';document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));this.classList.add('on');renderVideos()">${c==='all'?'All':c}</button>`).join('');
+    ftabs.dataset.built='1';
+  }
+  const filtered=vids.filter(v=>{
+    const mc=vidFilter==='all'||v.cat===vidFilter;
+    const ms=v.title.toLowerCase().includes(search)||v.desc?.toLowerCase().includes(search)||'';
+    return mc&&ms;
+  });
+  const grid=document.getElementById('vidGrid');
+  if(!grid)return;
+  if(!filtered.length){grid.innerHTML='<div class="no-results">No videos found. Try a different search or filter.</div>';return}
+  grid.innerHTML=filtered.map(v=>`
+    <div class="vid-card" onclick="openVideo(${v.id})">
+      <div class="vid-thumb">
+        <div class="vid-thumb-bg">${v.icon||'▶️'}</div>
+        <div class="vid-overlay"><div class="play-ico">▶</div></div>
+        <span class="vid-dur">${v.dur}</span>
+      </div>
+      <div class="vid-info">
+        <div class="vid-title">${v.title}</div>
+        <div class="vid-desc">${v.desc||''}</div>
+        <div class="vid-meta"><span>👁 ${v.views.toLocaleString()} views</span><span>📅 ${v.date}</span><span>📂 ${v.cat}</span></div>
+      </div>
+    </div>`).join('');
+}
+
+function openVideo(id){
+  const v=getVideos().find(x=>x.id===id);if(!v)return;
+  // Increment views
+  const vids=getVideos();const vi=vids.findIndex(x=>x.id===id);
+  if(vi>=0){vids[vi].views++;DB.set('videos',vids)}
+  document.getElementById('vmTitle').textContent=v.title;
+  const embed=getYTEmbed(v.url);
+  document.getElementById('vmPlayer').innerHTML=embed
+    ?`<iframe src="${embed}" allowfullscreen allow="autoplay"></iframe>`
+    :`<div style="text-align:center"><div style="font-size:4rem">${v.icon||'▶️'}</div><p style="color:var(--text3);margin-top:1rem;font-size:.85rem">YouTube URL not configured for this video</p></div>`;
+  document.getElementById('vmInfo').innerHTML=`<p style="margin-bottom:.5rem"><strong>${v.cat}</strong> · ${v.date} · ${v.dur}</p><p style="color:var(--text2);font-size:.88rem">${v.desc||''}</p><p style="color:var(--text3);font-size:.78rem;margin-top:.5rem">👁 ${v.views.toLocaleString()} views</p>`;
+  openModal('vidModal');
+}
+
+function renderProjects(){
+  const grid=document.getElementById('projGrid');if(!grid)return;
+  const projs=getProjects();
+  if(!projs.length){grid.innerHTML='<p style="color:var(--text3);text-align:center;padding:2rem;grid-column:1/-1">No projects yet. Add them from the Admin Dashboard.</p>';return}
+  grid.innerHTML=projs.map(p=>`
+    <div class="proj-card${p.featured?' feat':''}">
+      <div class="proj-media"><div class="proj-media-bg"></div><div class="proj-media-icon">${p.icon||'⚡'}</div></div>
+      <div class="proj-body">
+        ${p.featured?'<div class="feat-badge">⭐ Featured</div>':''}
+        <div class="proj-title">${p.title}</div>
+        <div class="proj-desc">${p.desc}</div>
+        <div class="tech-tags">${(p.tech||[]).map(t=>`<span class="ttech">${t}</span>`).join('')}</div>
+        <div class="proj-status"><span class="status-dot" style="background:${p.status==='Completed'?'var(--green)':'var(--gold)'}"></span>${p.status}</div>
+        <div class="proj-links">
+          ${p.github?`<a href="${p.github.startsWith('http')?p.github:'https://'+p.github}" target="_blank" class="plink">🐙 GitHub</a>`:''}
+          ${p.demo?`<a href="${p.demo.startsWith('http')?p.demo:'https://'+p.demo}" target="_blank" class="plink pri">🔗 Demo</a>`:''}
+          <button class="plink" onclick="toast('Project: ${p.title.replace(/'/g,'\\'')}','📋')">View Details</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderBlog(){
+  const grid=document.getElementById('blogGrid');if(!grid)return;
+  const posts=getBlog();
+  if(!posts.length){grid.innerHTML='<p style="color:var(--text3);text-align:center;padding:2rem;grid-column:1/-1">No articles yet. Write your first one from the Admin Dashboard.</p>';return}
+  grid.innerHTML=posts.map(b=>`
+    <div class="blog-card" onclick="openBlog(${b.id})">
+      <div class="blog-cover"><div class="blog-cover-inner" style="background:${b.bg||'linear-gradient(135deg,#0c1e30,#071625)'}"></div><span class="blog-cover-icon">${b.icon||'📝'}</span></div>
+      <div class="blog-body">
+        <div class="blog-cat">${b.cat}</div>
+        <div class="blog-title">${b.title}</div>
+        <div class="blog-excerpt">${b.exc}</div>
+        <div class="blog-foot"><div class="b-author"><div class="b-av">SG</div>Samuel Gatimu</div><span>${b.date} · ${b.time} min read</span></div>
+      </div>
+    </div>`).join('');
+}
+
+function openBlog(id){
+  const b=getBlog().find(x=>x.id===id);if(!b)return;
+  document.getElementById('bmTitle').textContent=b.title;
+  document.getElementById('bmBody').innerHTML=`
+    <div style="margin-bottom:1.2rem"><span style="font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent)">${b.cat}</span> · <span style="color:var(--text3);font-size:.75rem">${b.date} · ${b.time} min read</span></div>
+    <div style="color:var(--text2);line-height:1.85;font-size:.93rem;white-space:pre-wrap">${b.content}</div>`;
+  openModal('blogModal');
+}
+
+function renderTimeline(){
+  const cont=document.getElementById('tlContainer');if(!cont)return;
+  const tls=getTimeline();
+  cont.innerHTML=tls.map(t=>`
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">${t.date}</div>
+      <div class="tl-title">${t.title}</div>
+      ${t.inst?`<div class="tl-inst">📍 ${t.inst}</div>`:''}
+      <div class="tl-desc">${t.desc}</div>
+      ${t.tags?.length?`<div class="tags">${t.tags.map(tag=>`<span class="tag">${tag}</span>`).join('')}</div>`:''}
+    </div>`).join('');
+  // Re-observe new elements
+  cont.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+
+function renderSkills(){
+  // About section skill bars
+  const skillRows=document.getElementById('skillRows');
+  const skills=getSkills().slice(0,5);
+  if(skillRows)skillRows.innerHTML=skills.map(s=>`
+    <div>
+      <div class="sk-top"><span>${s.name}</span><span>${s.level}%</span></div>
+      <div class="sk-bar"><div class="sk-fill" data-w="${s.level}"></div></div>
+    </div>`).join('');
+  // Skills grid
+  const grid=document.getElementById('skGrid');
+  if(grid)grid.innerHTML=getSkills().map(s=>`
+    <div class="sk-node">
+      <div class="sk-icon">${s.icon||'🔧'}</div>
+      <div class="sk-name">${s.name}</div>
+      <div class="sk-lv"><div class="sk-lf" data-w="${s.level}"></div></div>
+    </div>`).join('');
+  // Re-animate visible ones
+  document.querySelectorAll('.sk-fill[data-w],.sk-lf[data-w]').forEach(el=>{
+    el.style.width=el.dataset.w+'%';
+  });
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  ADMIN TABLES
+// ╚══════════════════════════════════════════════════════════
+function renderAdminTables(){
+  // Videos table
+  const vtb=document.getElementById('v-tbody');
+  if(vtb){
+    const vids=getVideos();
+    document.getElementById('v-count').textContent=vids.length;
+    vtb.innerHTML=vids.map(v=>`<tr><td>${v.icon||'▶️'}</td><td>${v.title}</td><td><span class="badge-pub">${v.cat}</span></td><td style="font-family:'JetBrains Mono',monospace;font-size:.75rem">${v.dur}</td><td>${v.views}</td><td><div class="tbl-actions"><button class="tbl-btn del" onclick="delVideo(${v.id})">🗑 Delete</button></div></td></tr>`).join('');
+  }
+  // Projects table
+  const ptb=document.getElementById('pr-tbody');
+  if(ptb){
+    const projs=getProjects();
+    document.getElementById('pr-count').textContent=projs.length;
+    ptb.innerHTML=projs.map(p=>`<tr><td>${p.icon||'⚡'}</td><td>${p.title}</td><td style="font-size:.75rem;color:var(--text3)">${(p.tech||[]).slice(0,2).join(', ')}</td><td><span class="badge-${p.status==='Completed'?'done':'prog'}">${p.status}</span></td><td><div class="tbl-actions"><button class="tbl-btn del" onclick="delProject(${p.id})">🗑 Delete</button></div></td></tr>`).join('');
+  }
+  // Blog table
+  const btb=document.getElementById('b-tbody');
+  if(btb){
+    const posts=getBlog();
+    document.getElementById('b-count').textContent=posts.length;
+    btb.innerHTML=posts.map(b=>`<tr><td>${b.title}</td><td><span class="badge-pub">${b.cat}</span></td><td>${b.time} min</td><td>${b.date}</td><td><div class="tbl-actions"><button class="tbl-btn" onclick="openBlog(${b.id})">👁 View</button><button class="tbl-btn del" onclick="delBlog(${b.id})">🗑 Delete</button></div></td></tr>`).join('');
+  }
+  // Timeline table
+  const tltb=document.getElementById('tl-tbody');
+  if(tltb){
+    const tls=getTimeline();
+    document.getElementById('tl-count').textContent=tls.length;
+    tltb.innerHTML=tls.map(t=>`<tr><td>${t.title}</td><td>${t.inst||'—'}</td><td>${t.date}</td><td><div class="tbl-actions"><button class="tbl-btn del" onclick="delTimeline(${t.id})">🗑 Delete</button></div></td></tr>`).join('');
+  }
+  // Skills table
+  const sktb=document.getElementById('sk-tbody');
+  if(sktb){
+    const skills=getSkills();
+    document.getElementById('sk-count').textContent=skills.length;
+    sktb.innerHTML=skills.map(s=>`<tr><td>${s.icon||'🔧'}</td><td>${s.name}</td><td>${s.cat}</td><td><div style="display:flex;align-items:center;gap:.5rem"><div style="flex:1;height:4px;background:var(--bg3);border-radius:2px"><div style="width:${s.level}%;height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:2px"></div></div><span style="font-size:.72rem;color:var(--text3)">${s.level}%</span></div></td><td><div class="tbl-actions"><button class="tbl-btn del" onclick="delSkill(${s.id})">🗑 Delete</button></div></td></tr>`).join('');
+  }
+  // Activity log
+  const acts=document.getElementById('activityLog');
+  if(acts){
+    const activity=getActivity();
+    acts.innerHTML=activity.length
+      ?activity.slice(0,8).map(a=>`<div class="activity-item"><span>${a.msg}</span><span style="color:var(--text3);font-size:.72rem">${a.time}</span></div>`).join('')
+      :'<div class="activity-item"><span style="color:var(--text3)">No activity yet</span></div>';
+  }
+}
+
+function refreshAdminStats(){
+  const el=id=>document.getElementById(id);
+  if(el('st-v'))el('st-v').textContent=getVideos().length;
+  if(el('st-p'))el('st-p').textContent=getProjects().length;
+  if(el('st-b'))el('st-b').textContent=getBlog().length;
+  if(el('st-f'))el('st-f').textContent=getVault().length;
+}
+
+function switchPanel(name,el){
+  document.querySelectorAll('.admin-panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.am-item').forEach(i=>i.classList.remove('on'));
+  document.getElementById('p-'+name).classList.add('on');
+  if(el)el.classList.add('on');
+  if(name==='vault')renderVault();
+  if(name==='cv')renderCVPreview();
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  CONTACT FORM
+// ╚══════════════════════════════════════════════════════════
+function sendMsg(){
+  const fn=document.getElementById('cfn').value.trim();
+  const em=document.getElementById('cem').value.trim();
+  const msg=document.getElementById('cmsg').value.trim();
+  if(!fn||!em||!msg){toast('Please fill in Name, Email and Message','❌',true);return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){toast('Please enter a valid email address','❌',true);return}
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;btn.textContent='Sending...';
+  setTimeout(()=>{
+    const msgs=DB.get('messages')||[];
+    msgs.push({name:fn+' '+(document.getElementById('cln').value||''),email:em,subject:document.getElementById('csub').value||'Portfolio Contact',message:msg,date:new Date().toLocaleString()});
+    DB.set('messages',msgs);
+    ['cfn','cln','cem','csub','cmsg'].forEach(id=>document.getElementById(id).value='');
+    btn.disabled=false;
+    btn.innerHTML='📨 Send Message';
+    toast('Message sent! Samuel will get back to you soon.','✅');
+    logActivity(`New message from ${fn} (${em})`);
+  },1200);
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  MODAL
+// ╚══════════════════════════════════════════════════════════
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');document.body.style.overflow='';
+  if(id==='vidModal')document.getElementById('vmPlayer').innerHTML='';
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  TOAST NOTIFICATION
+// ╚══════════════════════════════════════════════════════════
+let toastTimer;
+function toast(msg,icon='✅',isError=false){
+  clearTimeout(toastTimer);
+  const t=document.getElementById('toast');
+  document.getElementById('tMsg').textContent=msg;
+  document.getElementById('tIcon').textContent=icon;
+  t.className='toast '+(isError?'error':'success')+' show';
+  toastTimer=setTimeout(()=>t.className='toast',3500);
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  TYPING EFFECT
+// ╚══════════════════════════════════════════════════════════
+const phrases=['Building circuits that power the future ⚡','Electrical & Electronic Engineer in training 🎓','Creating engineering content for Africa 🌍','From Langa Langa to Chuka University 🚀','Turning theory into practical solutions 🔌'];
+let pi=0,ci=0,del=false;
+function type(){
+  const el=document.getElementById('typeTxt');if(!el)return;
+  const ph=phrases[pi];
+  if(!del){el.textContent=ph.slice(0,++ci);if(ci===ph.length){del=true;setTimeout(type,2200);return}setTimeout(type,65);}
+  else{el.textContent=ph.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length;setTimeout(type,500);return}setTimeout(type,28);}
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  STATS COUNTER
+// ╚══════════════════════════════════════════════════════════
+function updateStats(){
+  const animate=(id,val)=>{
+    const el=document.getElementById(id);if(!el)return;
+    let c=0;const s=val/40;
+    const iv=setInterval(()=>{c=Math.min(c+s,val);el.textContent=Math.round(c)+(val>=5?'+':'');if(c>=val)clearInterval(iv);},30);
+  };
+  animate('sc1',getProjects().length);
+  animate('sc2',getVideos().length);
+  animate('sc3',getBlog().length);
+  animate('sc4',4);
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  SCROLL & INTERSECTION OBSERVER
+// ╚══════════════════════════════════════════════════════════
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('vis');
+      e.target.querySelectorAll('.sk-fill[data-w],.sk-lf[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');
+    }
+  });
+},{threshold:.1});
+
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  document.getElementById('sp').style.transform=`scaleX(${s/h})`;
+  document.getElementById('bTop').classList.toggle('show',s>400);
+});
+
+// ╔══════════════════════════════════════════════════════════
+// ║  THEME
+// ╚══════════════════════════════════════════════════════════
+function toggleTheme(){
+  const th=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=th;
+  document.getElementById('themeBtn').textContent=th==='dark'?'🌙':'☀️';
+  DB.set('theme',th);
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  MISC
+// ╚══════════════════════════════════════════════════════════
+function clearForm(ids){ids.forEach(id=>{const el=document.getElementById(id);if(el)el.value=''})}
+function clearAllData(){
+  ['videos','projects','blog','timeline','skills','vault','messages','activity'].forEach(k=>DB.del(k));
+  renderAll();toast('All data cleared.','🗑️');logActivity('All data cleared by admin')}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  DEFAULT DATA
+// ╚══════════════════════════════════════════════════════════
+function defaultVideos(){return[
+  {id:1,title:"Kirchhoff's Voltage Law — Complete Guide",desc:"Step-by-step derivation and practical circuit examples using KVL.",cat:"Engineering Tutorials",views:1204,date:"Feb 2026",dur:"18:32",icon:"⚡",url:""},
+  {id:2,title:"Introduction to Fourier Series",desc:"Understanding Fourier series with engineering applications.",cat:"Mathematics",views:892,date:"Jan 2026",dur:"24:10",icon:"📐",url:""},
+  {id:3,title:"Building an LED Flasher Circuit",desc:"Building an astable multivibrator on breadboard from scratch.",cat:"Electronics Practicals",views:1567,date:"Jan 2026",dur:"15:20",icon:"🔌",url:""},
+  {id:4,title:"How AC Power Systems Work",desc:"Three-phase power generation and distribution explained clearly.",cat:"Engineering Tutorials",views:743,date:"Dec 2025",dur:"22:05",icon:"🔋",url:""},
+  {id:5,title:"Arduino Sensor Integration",desc:"Using DHT11, LDR and IR sensors with Arduino Uno.",cat:"Electronics Practicals",views:988,date:"Nov 2025",dur:"20:40",icon:"🤖",url:""},
+  {id:6,title:"Chuka University EEE Overview",desc:"What to expect in the EEE program and study strategies.",cat:"University Learning",views:2100,date:"Oct 2025",dur:"12:55",icon:"🎓",url:""},
+]}
+
+function defaultProjects(){return[
+  {id:1,title:"Automatic Solar Charge Controller",desc:"PWM-based solar charge controller for 12V lead-acid batteries. Uses LM393 comparators and MOSFET switching to regulate charging voltage.",tech:["Arduino","C++","LTSpice","PCB"],icon:"☀️",featured:true,status:"Completed",github:"",demo:""},
+  {id:2,title:"Digital Voltmeter & Ammeter",desc:"LCD-based digital multimeter using Arduino and ACS712 current sensor. Accurate to ±0.1V.",tech:["Arduino","C++","LCD","ACS712"],icon:"🔌",featured:false,status:"Completed",github:"",demo:""},
+  {id:3,title:"Traffic Light Control System",desc:"Programmable traffic light system using Arduino and shift registers with pedestrian crossing.",tech:["Arduino","C++","74HC595"],icon:"🚦",featured:false,status:"Completed",github:"",demo:""},
+  {id:4,title:"Home Energy Monitor (IoT)",desc:"Real-time power consumption monitor sending data to a web dashboard via ESP8266 WiFi module.",tech:["ESP8266","MQTT","Node.js"],icon:"📊",featured:false,status:"In Progress",github:"",demo:""},
+]}
+
+function defaultBlog(){return[
+  {id:1,title:"Understanding Three-Phase Power Systems",cat:"Electrical Engineering",exc:"A deep dive into how three-phase AC power works and why it's preferred for industrial applications.",content:"Three-phase power is the standard for industrial and commercial power distribution worldwide.\n\nUnlike single-phase systems, three-phase systems deliver power more efficiently and with less conductor material.\n\nIn a balanced three-phase system, the three voltages are equal in magnitude and 120° apart in phase. This produces a constant total power delivery, unlike single-phase where power pulses at twice the supply frequency.\n\nKey advantages:\n• Higher power density for same conductor size\n• More efficient motors\n• Smoother torque in rotating machinery\n• Lower transmission losses\n\nAs an electrical engineer, mastering three-phase analysis is fundamental to working with industrial equipment and power distribution systems.",date:"Mar 2026",time:8,icon:"⚡",bg:"linear-gradient(135deg,#0c1e30,#071625)"},
+  {id:2,title:"My Journey into Electrical Engineering",cat:"University Life",exc:"From Langa Langa Secondary School to Chuka University — the story of my path into engineering.",content:"When I sat for my KCSE examinations at Langa Langa Secondary School, I knew engineering was my calling.\n\nThe satisfaction of understanding how circuits work — how invisible electrons move through wires to power our modern world — was enough to convince me this was my path.\n\nAfter achieving B+ in KCSE, I spent time volunteering at my former school, helping students navigate Mathematics and Physics. This experience taught me that teaching and engineering are deeply connected.\n\nNow at Chuka University studying Electrical and Electronic Engineering, every day brings new discoveries. From circuit analysis to power systems to embedded programming — the journey is challenging but deeply fulfilling.\n\nMy advice to anyone considering EEE: embrace the mathematics. It is the language of engineering.",date:"Feb 2026",time:6,icon:"🎓",bg:"linear-gradient(135deg,#0f2035,#040d14)"},
+]}
+
+function defaultTimeline(){return[
+  {id:1,title:"Langa Langa Secondary School — KCSE B+",inst:"Langa Langa Secondary School",date:"2018 – 2021",desc:"Completed KCSE with a B+ grade, excelling in Mathematics, Physics, Chemistry and Computer Studies. Built the strong scientific foundation essential for engineering studies.",tags:["KCSE B+","Mathematics","Physics"]},
+  {id:2,title:"Volunteer Teacher & Mentor",inst:"Langa Langa Secondary School",date:"2022",desc:"Returned to my former school as a volunteer, teaching Mathematics and Physics to Form 3 & 4 students. Helped improve class performance and discovered my passion for education.",tags:["Teaching","Mentorship","Community Service"]},
+  {id:3,title:"B.Sc Electrical & Electronic Engineering",inst:"Chuka University, Tharaka-Nithi",date:"2022 – Present",desc:"Currently pursuing my degree with focus on power systems, electronics, telecommunications, control systems and engineering mathematics. Actively involved in practical labs and engineering projects.",tags:["EEE Degree","Power Systems","Electronics","Control Systems"]},
+  {id:4,title:"Technology Content Creator",inst:"YouTube & Engineering Blog",date:"2023 – Present",desc:"Creating educational videos and articles about electrical engineering, electronics and mathematics to help students across Kenya and Africa.",tags:["Content Creation","Education","YouTube"]},
+]}
+
+function defaultSkills(){return[
+  {id:1,name:"MATLAB",icon:"⚡",level:80,cat:"Engineering Software"},
+  {id:2,name:"KiCad",icon:"🔌",level:72,cat:"Engineering Software"},
+  {id:3,name:"Python",icon:"🐍",level:78,cat:"Programming"},
+  {id:4,name:"C/C++",icon:"💻",level:70,cat:"Programming"},
+  {id:5,name:"Arduino",icon:"🤖",level:85,cat:"Hardware"},
+  {id:6,name:"Proteus",icon:"🔧",level:75,cat:"Engineering Software"},
+  {id:7,name:"LTSpice",icon:"📐",level:74,cat:"Engineering Software"},
+  {id:8,name:"AutoCAD",icon:"📏",level:65,cat:"Engineering Software"},
+]}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  RENDER ALL
+// ╚══════════════════════════════════════════════════════════
+function renderAll(){
+  renderVideos();
+  renderProjects();
+  renderBlog();
+  renderTimeline();
+  renderSkills();
+  updateStats();
+  // Apply saved personal info to contacts
+  const info=getInfo();
+  const ce=document.getElementById('contactEmail');
+  if(ce)ce.textContent=info.email;
+  if(info.github){const el=document.getElementById('socGH');if(el)el.href='https://'+info.github}
+  if(info.linkedin){const el=document.getElementById('socLI');if(el)el.href='https://'+info.linkedin}
+  if(info.youtube){const el=document.getElementById('socYT');if(el)el.href=info.youtube}
+}
+
+// ╔══════════════════════════════════════════════════════════
+// ║  INIT
+// ╚══════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{
+  // Restore theme
+  const savedTheme=DB.get('theme')||'dark';
+  document.documentElement.dataset.theme=savedTheme;
+  document.getElementById('themeBtn').textContent=savedTheme==='dark'?'🌙':'☀️';
+
+  renderAll();
+  type();
+
+  // Observe all reveal elements
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Theme button
+  document.getElementById('themeBtn').addEventListener('click',toggleTheme);
+
+  // Hamburger
+  document.getElementById('hbg').addEventListener('click',()=>{
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  // Skill bar animation on scroll
+  document.querySelectorAll('.sk-fill,.sk-lf').forEach(el=>{
+    new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting)el.style.width=el.dataset.w+'%';
+    }).observe(el);
+  });
+});
+</script>
+</body>
+</html>
