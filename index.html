@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Samuel Gatimu Kariuki | Electrical & Electronic Engineer</title>
+<meta name="description" content="Professional portfolio of Samuel Gatimu Kariuki - Electrical and Electronic Engineering student at Chuka University, Kenya."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#030b12;--bg2:#061420;--bg3:#0a1e2e;
+  --surface:#081828;--surface2:#0d2236;
+  --border:#12304a;--border2:#1a4060;
+  --accent:#00c8f0;--accent2:#0099cc;--accent3:#ff6b35;
+  --green:#00e5a0;--gold:#f0a500;--red:#ff3d55;
+  --text:#e2f0f8;--text2:#6a9ab5;--text3:#2e5570;
+  --r:10px;--rl:18px;
+  --font-head:'Syne',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+[data-theme="light"]{
+  --bg:#f0f5fa;--bg2:#e2edf5;--bg3:#d4e5f0;
+  --surface:#ffffff;--surface2:#eef4fa;
+  --border:#b8d0e2;--border2:#90b8d0;
+  --text:#05121e;--text2:#2e5570;--text3:#6a9ab5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:4px}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:var(--font-body);border:none;outline:none}
+input,textarea,select{font-family:var(--font-body);outline:none}
+img{max-width:100%}
+
+/* SCROLL PROGRESS */
+#scrollBar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--green));width:0;z-index:9999;transition:width .08s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(3,11,18,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(18,48,74,.6);transition:background .3s}
+.nav-logo{font-family:var(--font-head);font-weight:800;font-size:1.3rem;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);transition:color .2s;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:.7rem}
+.nav-icon-btn{width:36px;height:36px;border-radius:8px;background:var(--surface);border:1px solid var(--border);color:var(--text2);display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .2s}
+.nav-icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.nav-admin-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:.4rem 1.1rem;border-radius:8px;font-weight:700;font-size:.8rem;transition:all .2s}
+.nav-admin-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,200,240,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text2);border-radius:2px;transition:all .3s}
+.mobile-menu{position:fixed;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem 2rem;z-index:890;display:none;flex-direction:column;gap:.6rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text2);font-size:.9rem;font-weight:500;padding:.5rem 0;border-bottom:1px solid var(--border)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 5rem;position:relative;overflow:hidden}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(18,48,74,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(18,48,74,.35) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 10%,transparent 70%)}
+.hero-orb1{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(0,200,240,.07) 0%,transparent 70%);top:-200px;left:-150px;animation:float1 10s ease-in-out infinite}
+.hero-orb2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(0,229,160,.05) 0%,transparent 70%);bottom:-150px;right:-100px;animation:float2 12s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,20px)}}
+@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,30px)}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,200,240,.08);border:1px solid rgba(0,200,240,.22);color:var(--accent);padding:.3rem 1rem;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp .8s ease both}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.5)}}
+.hero-h1{font-family:var(--font-head);font-size:clamp(3rem,9vw,7rem);font-weight:800;line-height:.95;letter-spacing:-.04em;margin-bottom:.8rem;animation:fadeUp .8s .1s ease both}
+.hero-h1 .grad{background:linear-gradient(135deg,var(--accent) 0%,var(--green) 50%,var(--accent3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-role{font-size:clamp(.95rem,2vw,1.2rem);color:var(--text2);font-weight:300;margin-bottom:1.2rem;animation:fadeUp .8s .2s ease both}
+.hero-typing{font-family:var(--font-mono);color:var(--accent);font-size:clamp(.85rem,1.5vw,1.1rem);min-height:2rem;margin-bottom:2.5rem;animation:fadeUp .8s .3s ease both}
+.hero-cursor{animation:cur .9s infinite}
+@keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;margin-bottom:4rem;animation:fadeUp .8s .4s ease both}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:.6rem;transition:all .3s;position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .3s}
+.btn-primary:hover::before{opacity:1}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,200,240,.4)}
+.btn-secondary{background:transparent;border:1px solid var(--border2);color:var(--text);padding:.85rem 2rem;border-radius:10px;font-weight:500;font-size:.92rem;display:flex;align-items:center;gap:.6rem;transition:all .3s}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-ticker-wrap{width:100%;max-width:860px;overflow:hidden;background:rgba(0,200,240,.05);border:1px solid rgba(0,200,240,.14);border-radius:10px;padding:.6rem 0;cursor:pointer;animation:fadeUp .8s .5s ease both;position:relative}
+.hero-ticker-wrap::before,.hero-ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2}
+.hero-ticker-wrap::before{left:0;background:linear-gradient(90deg,rgba(3,11,18,.9),transparent)}
+.hero-ticker-wrap::after{right:0;background:linear-gradient(-90deg,rgba(3,11,18,.9),transparent)}
+.hero-ticker-inner{display:flex;gap:5rem;width:max-content;animation:ticker 25s linear infinite}
+.hero-ticker-wrap:hover .hero-ticker-inner{animation-play-state:paused}
+.hero-ticker-item{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--accent);font-weight:600;letter-spacing:.05em;white-space:nowrap}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-stats{display:flex;gap:3.5rem;flex-wrap:wrap;justify-content:center;margin-top:4rem;animation:fadeUp .8s .6s ease both}
+.hero-stat-num{font-family:var(--font-head);font-size:2.5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat-label{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-top:.2rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTION BASE */
+section{padding:6rem 1.5rem}
+.container{max-width:1160px;margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.16em;margin-bottom:.8rem}
+.section-label::before{content:'// ';color:var(--text3)}
+.section-title{font-family:var(--font-head);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:.8rem}
+.section-sub{color:var(--text2);font-size:.95rem;max-width:560px;line-height:1.8;margin-bottom:3rem}
+.bg-alt{background:var(--bg2)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* QUOTE BANNER */
+.quote-banner{padding:4rem 1.5rem;text-align:center;background:linear-gradient(135deg,rgba(0,200,240,.04),rgba(0,229,160,.02));border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.quote-mark{font-family:var(--font-head);font-size:6rem;color:var(--accent);opacity:.12;line-height:1;position:absolute;top:.5rem;left:50%;transform:translateX(-50%)}
+.quote-text{font-family:var(--font-head);font-size:clamp(1.15rem,2.8vw,2rem);font-weight:700;letter-spacing:-.025em;max-width:700px;margin:0 auto .8rem;line-height:1.3;position:relative}
+.quote-author{color:var(--text3);font-size:.82rem;font-style:italic}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:4.5rem;align-items:center}
+.about-visual{position:relative}
+.about-card{background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:var(--rl);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;font-size:8rem;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,200,240,.08),rgba(0,229,160,.05))}
+.about-float1{position:absolute;bottom:1.5rem;left:-1.2rem;background:rgba(3,11,18,.92);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.8rem;min-width:200px;z-index:2}
+.about-float2{position:absolute;top:1.5rem;right:-1.2rem;background:rgba(3,11,18,.92);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.8rem;min-width:200px;z-index:2}
+.afloat-icon{font-size:1.3rem}
+.afloat-main{font-size:.82rem;font-weight:600}
+.afloat-sub{font-size:.7rem;color:var(--text3)}
+.about-text p{color:var(--text2);line-height:1.85;margin-bottom:1rem;font-size:.93rem}
+.skill-list{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.2rem}
+.skill-item-label{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.35rem;font-weight:500}
+.skill-bar-bg{height:4px;background:var(--surface2);border-radius:4px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--green));width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+
+/* TOOLKIT GRID */
+.toolkit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:1rem}
+.toolkit-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem .8rem;text-align:center;transition:all .3s;cursor:default}
+.toolkit-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,200,240,.1)}
+.toolkit-icon{font-size:2rem;margin-bottom:.6rem}
+.toolkit-name{font-size:.78rem;font-weight:600;margin-bottom:.25rem}
+.toolkit-level{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:.5rem}
+.toolkit-level-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--green));width:0;transition:width 1.4s ease}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--green),rgba(0,229,160,.1))}
+.tl-entry{position:relative;padding:0 0 3rem 2.5rem;opacity:0;transform:translateX(-20px);transition:all .6s ease}
+.tl-entry.visible{opacity:1;transform:translateX(0)}
+.tl-dot{position:absolute;left:-.55rem;top:.25rem;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(0,200,240,.12);transition:all .3s}
+.tl-entry:hover .tl-dot{background:var(--accent);box-shadow:0 0 0 8px rgba(0,200,240,.15);transform:scale(1.1)}
+.tl-year{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.tl-title{font-family:var(--font-head);font-size:1.25rem;font-weight:700;margin-bottom:.2rem}
+.tl-inst{color:var(--text3);font-size:.82rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.tl-desc{color:var(--text2);font-size:.88rem;line-height:1.75}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.tl-tag{background:rgba(0,200,240,.07);border:1px solid rgba(0,200,240,.18);color:var(--accent);font-size:.68rem;padding:.2rem .6rem;border-radius:50px;font-family:var(--font-mono)}
+.tl-tag.green{background:rgba(0,229,160,.07);border-color:rgba(0,229,160,.18);color:var(--green)}
+.tl-tag.orange{background:rgba(255,107,53,.07);border-color:rgba(255,107,53,.18);color:var(--accent3)}
+
+/* VIDEO SECTION */
+.vid-controls{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;margin-bottom:2rem}
+.vid-search-wrap{position:relative;flex:1;min-width:200px}
+.vid-search-icon{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none;font-size:.9rem}
+.vid-search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:.65rem 1rem .65rem 2.5rem;color:var(--text);font-size:.87rem;transition:border-color .2s}
+.vid-search:focus{border-color:var(--accent)}
+.filter-tabs{display:flex;gap:.4rem;flex-wrap:wrap}
+.ftab{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:.42rem .85rem;border-radius:7px;font-size:.77rem;font-weight:500;transition:all .2s}
+.ftab.active,.ftab:hover{background:rgba(0,200,240,.1);border-color:var(--accent);color:var(--accent)}
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem}
+.vid-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all .3s}
+.vid-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 12px 36px rgba(0,200,240,.1)}
+.vid-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.vid-thumb-emoji{font-size:3rem;transition:transform .3s;position:relative;z-index:1}
+.vid-thumb-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--bg3),var(--surface2))}
+.vid-card:hover .vid-thumb-emoji{transform:scale(1.12)}
+.vid-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;z-index:2}
+.vid-card:hover .vid-overlay{opacity:1}
+.vid-play-btn{width:54px;height:54px;border-radius:50%;background:rgba(0,200,240,.9);display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;transition:transform .2s}
+.vid-play-btn:hover{transform:scale(1.1)}
+.vid-duration{position:absolute;bottom:.5rem;right:.5rem;background:rgba(0,0,0,.85);color:#fff;font-size:.67rem;padding:.1rem .45rem;border-radius:4px;font-family:var(--font-mono);z-index:3}
+.vid-info{padding:1rem}
+.vid-title{font-size:.9rem;font-weight:600;margin-bottom:.3rem;line-height:1.4}
+.vid-desc{font-size:.76rem;color:var(--text3);margin-bottom:.6rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vid-meta{display:flex;gap:.8rem;font-size:.7rem;color:var(--text3)}
+.vid-cat-badge{display:inline-block;background:rgba(0,200,240,.08);border:1px solid rgba(0,200,240,.18);color:var(--accent);font-size:.66rem;padding:.12rem .5rem;border-radius:4px;font-family:var(--font-mono);margin-bottom:.5rem}
+.vid-empty{grid-column:1/-1;text-align:center;padding:3rem;color:var(--text3);font-size:.9rem}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .3s}
+.proj-card:hover{border-color:rgba(0,200,240,.4);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,200,240,.08)}
+.proj-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+.proj-media{background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden;min-height:180px}
+.proj-card.featured .proj-media{min-height:280px}
+.proj-media-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,200,240,.06),rgba(0,229,160,.04))}
+.proj-media-icon{position:relative;z-index:1}
+.proj-body{padding:1.5rem}
+.proj-featured-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.28);color:var(--accent3);font-size:.67rem;font-weight:700;padding:.18rem .6rem;border-radius:4px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.8rem}
+.proj-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.proj-desc{color:var(--text2);font-size:.86rem;line-height:1.75;margin-bottom:.9rem}
+.proj-techs{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.proj-tech{background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:.67rem;padding:.18rem .5rem;border-radius:4px;font-family:var(--font-mono)}
+.proj-status-row{display:flex;align-items:center;gap:.45rem;font-size:.74rem;color:var(--text3);margin-bottom:1rem}
+.proj-status-dot{width:7px;height:7px;border-radius:50%}
+.proj-links{display:flex;gap:.6rem;flex-wrap:wrap}
+.proj-link{background:transparent;border:1px solid var(--border);color:var(--text2);padding:.38rem .85rem;border-radius:6px;font-size:.77rem;display:flex;align-items:center;gap:.35rem;transition:all .2s;font-weight:500}
+.proj-link:hover{border-color:var(--accent);color:var(--accent)}
+.proj-link.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border-color:transparent;font-weight:700}
+.proj-link.primary:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,200,240,.3)}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.5rem}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all .3s}
+.blog-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,200,240,.09)}
+.blog-cover{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;position:relative;overflow:hidden}
+.blog-cover-bg{position:absolute;inset:0}
+.blog-cover-icon{position:relative;z-index:1}
+.blog-body{padding:1.3rem}
+.blog-cat{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem}
+.blog-title{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.45rem;line-height:1.3}
+.blog-excerpt{color:var(--text2);font-size:.82rem;line-height:1.7;margin-bottom:.9rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-footer{display:flex;justify-content:space-between;align-items:center;font-size:.71rem;color:var(--text3)}
+.blog-author-wrap{display:flex;align-items:center;gap:.45rem}
+.blog-avatar{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:700;color:#000}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start}
+.contact-left h3{font-family:var(--font-head);font-size:1.4rem;font-weight:700;margin-bottom:.8rem}
+.contact-left p{color:var(--text2);font-size:.93rem;line-height:1.8;margin-bottom:2rem}
+.contact-items{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem}
+.contact-item{display:flex;align-items:center;gap:.9rem;background:var(--surface);border:1px solid var(--border);padding:.9rem 1.1rem;border-radius:10px;transition:border-color .2s}
+.contact-item:hover{border-color:var(--accent)}
+.contact-item-icon{width:38px;height:38px;border-radius:8px;background:rgba(0,200,240,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-item-label{font-size:.69rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.12rem}
+.contact-item-val{font-size:.88rem;font-weight:500}
+.social-links{display:flex;gap:.6rem;margin-top:1.5rem}
+.social-btn{width:42px;height:42px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all .2s;color:var(--text2)}
+.social-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:2rem}
+.cf-title{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:1.5rem}
+.form-group{margin-bottom:1.1rem}
+.form-label{display:block;font-size:.74rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);margin-bottom:.4rem}
+.form-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.72rem .95rem;color:var(--text);font-size:.87rem;transition:border-color .2s}
+.form-input:focus{border-color:var(--accent)}
+textarea.form-input{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:.85rem;border-radius:9px;font-weight:700;font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:all .3s;margin-top:.5rem}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,200,240,.35)}
+.form-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 1.5rem;text-align:center}
+.footer-logo{font-family:var(--font-head);font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.6rem}
+.footer-text{color:var(--text3);font-size:.82rem;line-height:1.7}
+
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:2rem;left:2rem;z-index:800;width:42px;height:42px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text2);transition:all .3s;opacity:0;pointer-events:none}
+.back-top.show{opacity:1;pointer-events:all}
+.back-top:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.4rem;display:flex;align-items:center;gap:.65rem;font-size:.87rem;font-weight:500;transform:translateX(140%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);max-width:340px;box-shadow:0 10px 32px rgba(0,0,0,.5)}
+.toast.show{transform:translateX(0)}
+.toast.success{border-color:var(--green)}
+.toast.error{border-color:var(--red)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);max-width:720px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.95) translateY(20px);transition:all .3s}
+.modal-overlay.open .modal-box{transform:scale(1) translateY(0)}
+.modal-header{padding:1.3rem 1.8rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--surface);z-index:1}
+.modal-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700}
+.modal-close{background:var(--surface2);border:1px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s}
+.modal-close:hover{border-color:var(--red);color:var(--red)}
+.modal-body{padding:1.8rem}
+.video-frame{width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;margin-bottom:1.4rem;display:flex;align-items:center;justify-content:center}
+.video-frame iframe{width:100%;height:100%;border:none}
+.video-no-url{text-align:center;padding:3rem}
+.video-no-url .big-icon{font-size:4rem;margin-bottom:1rem}
+.video-no-url p{color:var(--text3);font-size:.85rem}
+
+/* ═══════════════════════════════
+   ADMIN DASHBOARD
+═══════════════════════════════ */
+.admin-shell{position:fixed;inset:0;z-index:3000;background:var(--bg);display:none;flex-direction:column}
+.admin-shell.open{display:flex}
+/* LOGIN */
+.admin-login-screen{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem}
+.login-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:2.8rem;width:100%;max-width:420px}
+.login-logo{font-family:var(--font-head);font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:.3rem}
+.login-sub{text-align:center;color:var(--text3);font-size:.82rem;margin-bottom:2rem}
+.login-error{background:rgba(255,61,85,.1);border:1px solid rgba(255,61,85,.28);color:var(--red);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;margin-bottom:1.2rem;display:none}
+.login-error.show{display:block}
+.login-hint{text-align:center;margin-top:1rem;font-size:.73rem;color:var(--text3)}
+.login-back{display:block;text-align:center;margin-top:1rem;font-size:.78rem;color:var(--text3);cursor:pointer;background:none;border:none;width:100%}
+.login-back:hover{color:var(--accent)}
+/* ADMIN TOPBAR */
+.admin-topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 1.8rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.admin-topbar-logo{font-family:var(--font-head);font-weight:800;font-size:1.1rem;color:var(--accent)}
+.admin-topbar-right{display:flex;align-items:center;gap:.8rem;font-size:.82rem;color:var(--text2)}
+.admin-avatar{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#000}
+.admin-logout-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.3rem .8rem;border-radius:6px;font-size:.75rem;cursor:pointer;transition:all .2s}
+.admin-logout-btn:hover{border-color:var(--red);color:var(--red)}
+/* ADMIN LAYOUT */
+.admin-layout{display:grid;grid-template-columns:220px 1fr;flex:1;overflow:hidden}
+.admin-sidebar{background:var(--surface);border-right:1px solid var(--border);padding:1.2rem .8rem;overflow-y:auto}
+.sidebar-menu{list-style:none;display:flex;flex-direction:column;gap:.15rem}
+.sidebar-item{padding:.65rem .9rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:.7rem;font-size:.84rem;font-weight:500;color:var(--text2);transition:all .2s;user-select:none}
+.sidebar-item:hover,.sidebar-item.active{background:rgba(0,200,240,.1);color:var(--accent)}
+.sidebar-item.active{font-weight:600}
+.admin-content{overflow-y:auto;padding:2rem}
+/* PANELS */
+.admin-panel{display:none}
+.admin-panel.active{display:block}
+.panel-heading{font-family:var(--font-head);font-size:1.4rem;font-weight:800;margin-bottom:1.8rem}
+/* STATS CARDS */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.8rem}
+.stat-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;text-align:center}
+.stat-box-num{font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--accent)}
+.stat-box-label{font-size:.69rem;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-top:.2rem}
+/* ADMIN CARDS */
+.a-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1.5rem}
+.a-card-title{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+/* FORM ELEMENTS */
+.a-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.a-form-full{grid-column:1/-1}
+.a-fg{margin-bottom:0}
+.a-label{display:block;font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--text2);margin-bottom:.38rem}
+.a-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem;color:var(--text);font-size:.87rem;transition:border-color .2s}
+.a-input:focus{border-color:var(--accent)}
+.a-select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem;color:var(--text);font-size:.87rem;appearance:none;cursor:pointer;transition:border-color .2s}
+.a-select:focus{border-color:var(--accent)}
+textarea.a-input{resize:vertical;min-height:100px}
+.a-submit{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:.72rem 1.8rem;border-radius:8px;font-weight:700;font-size:.87rem;display:flex;align-items:center;gap:.5rem;margin-top:.8rem;transition:all .2s}
+.a-submit:hover{transform:translateY(-1px);box-shadow:0 5px 18px rgba(0,200,240,.3)}
+/* DATA TABLE */
+.a-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.a-table th{text-align:left;padding:.6rem .8rem;color:var(--text3);font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border)}
+.a-table td{padding:.75rem .8rem;border-bottom:1px solid rgba(18,48,74,.4);vertical-align:middle}
+.a-table tr:last-child td{border-bottom:none}
+.a-table tr:hover td{background:rgba(0,200,240,.025)}
+.a-actions{display:flex;gap:.4rem;flex-wrap:wrap}
+.a-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.23rem .6rem;border-radius:5px;font-size:.71rem;cursor:pointer;transition:all .2s}
+.a-btn:hover{border-color:var(--accent);color:var(--accent)}
+.a-btn.danger:hover{border-color:var(--red);color:var(--red)}
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.7rem;padding:.18rem .55rem;border-radius:4px}
+.badge-blue{background:rgba(0,200,240,.1);color:var(--accent);border:1px solid rgba(0,200,240,.2)}
+.badge-green{background:rgba(0,229,160,.1);color:var(--green);border:1px solid rgba(0,229,160,.2)}
+.badge-gold{background:rgba(240,165,0,.1);color:var(--gold);border:1px solid rgba(240,165,0,.2)}
+/* VAULT */
+.vault-notice{background:rgba(240,165,0,.07);border:1px solid rgba(240,165,0,.22);border-radius:10px;padding:1rem 1.2rem;font-size:.83rem;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem}
+.upload-zone{border:2px dashed var(--border2);border-radius:10px;padding:2.8rem;text-align:center;cursor:pointer;transition:all .3s;background:rgba(0,200,240,.02)}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--accent);background:rgba(0,200,240,.05)}
+.upload-zone input{display:none}
+.upload-icon{font-size:2.8rem;margin-bottom:.7rem}
+.upload-text{font-size:.88rem;color:var(--text2)}
+.upload-sub{font-size:.74rem;color:var(--text3);margin-top:.3rem}
+.vault-files{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.9rem;margin-top:1.4rem}
+.vault-file{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;position:relative;transition:all .3s}
+.vault-file:hover{border-color:var(--accent)}
+.vault-file-icon{font-size:2.4rem;margin-bottom:.55rem}
+.vault-file-name{font-size:.77rem;font-weight:600;word-break:break-all;margin-bottom:.2rem}
+.vault-file-size{font-size:.67rem;color:var(--text3)}
+.vault-file-enc{font-size:.65rem;color:var(--green);margin-top:.35rem;display:flex;align-items:center;justify-content:center;gap:.25rem}
+.vault-del-btn{position:absolute;top:.45rem;right:.45rem;background:rgba(255,61,85,.12);border:1px solid rgba(255,61,85,.22);color:var(--red);width:22px;height:22px;border-radius:4px;font-size:.7rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s}
+.vault-file:hover .vault-del-btn{opacity:1}
+.vault-download-btn{display:block;width:100%;margin-top:.6rem;background:rgba(0,200,240,.08);border:1px solid rgba(0,200,240,.18);color:var(--accent);border-radius:5px;padding:.3rem;font-size:.71rem;cursor:pointer;transition:all .2s}
+.vault-download-btn:hover{background:rgba(0,200,240,.16)}
+/* CV PREVIEW */
+.cv-preview-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.8rem;font-size:.84rem;line-height:1.7}
+.cv-name{font-family:var(--font-head);font-size:1.6rem;font-weight:800;margin-bottom:.2rem}
+.cv-role{color:var(--accent);margin-bottom:.4rem;font-size:.92rem}
+.cv-contact{color:var(--text3);font-size:.77rem;margin-bottom:1rem}
+.cv-divider{border:none;border-top:1px solid var(--border);margin:.9rem 0}
+/* ACTIVITY LOG */
+.activity-list{display:flex;flex-direction:column;gap:.55rem}
+.activity-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem .9rem;background:var(--bg);border:1px solid var(--border);border-radius:7px;font-size:.81rem}
+.activity-time{font-size:.7rem;color:var(--text3);font-family:var(--font-mono);white-space:nowrap;margin-left:1rem}
+/* CHECKBOX */
+.checkbox-wrap{display:flex;align-items:center;gap:.6rem;cursor:pointer;font-size:.85rem;color:var(--text2)}
+.checkbox-wrap input{accent-color:var(--accent);width:16px;height:16px}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-float1,.about-float2{position:static;width:100%;margin-top:.8rem}
+  .proj-card.featured{grid-column:1;display:block}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .admin-layout{grid-template-columns:1fr}
+  .admin-sidebar{display:none}
+  .form-row,.a-form-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-admin-btn{display:none}
+  .hamburger{display:flex}
+  .hero h1{font-size:clamp(2.6rem,10vw,4rem)}
+  section{padding:4rem 1rem}
+  .proj-grid{grid-template-columns:1fr}
+  .vid-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="scrollBar"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">SGK</div>
+  <ul class="nav-links">
+    <li><a href="#home" onclick="closeMobile()">Home</a></li>
+    <li><a href="#about" onclick="closeMobile()">About</a></li>
+    <li><a href="#journey" onclick="closeMobile()">Journey</a></li>
+    <li><a href="#videos" onclick="closeMobile()">Videos</a></li>
+    <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+    <li><a href="#blog" onclick="closeMobile()">Blog</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" id="themeToggle" title="Toggle theme">🌙</button>
+    <button class="nav-admin-btn" onclick="openAdmin()">⚙ Admin</button>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#journey" onclick="closeMobile()">Journey</a>
+  <a href="#videos" onclick="closeMobile()">Videos</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <button class="nav-admin-btn" style="margin-top:.5rem;text-align:center;width:100%;padding:.65rem" onclick="openAdmin();closeMobile()">⚙ Admin Dashboard</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb1"></div><div class="hero-orb2"></div>
+  <div class="hero-badge"><span class="hero-badge-dot"></span>Open to Internships & Collaborations</div>
+  <h1 class="hero-h1"><span class="grad">Samuel</span><br>Gatimu Kariuki</h1>
+  <p class="hero-role">Electrical &amp; Electronic Engineering · Chuka University · Kenya</p>
+  <div class="hero-typing"><span id="typeText"></span><span class="hero-cursor">|</span></div>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="downloadCV()">📄 Download My CV</button>
+    <button class="btn-secondary" onclick="scrollTo('projects')">⚡ View Projects</button>
+  </div>
+  <div class="hero-ticker-wrap" onclick="downloadCV()" title="Click to download CV">
+    <div class="hero-ticker-inner" id="tickerInner">
+      <span class="hero-ticker-item">📄 Click here to download my CV — Updated 2026</span>
+      <span class="hero-ticker-item">🎓 B.Sc Electrical &amp; Electronic Engineering — Chuka University</span>
+      <span class="hero-ticker-item">⚡ KCSE Grade: B+ — Langa Langa Secondary School</span>
+      <span class="hero-ticker-item">🔬 Engineering · Power Systems · Electronics · Circuit Design</span>
+      <span class="hero-ticker-item">📄 Click here to download my CV — Updated 2026</span>
+      <span class="hero-ticker-item">🎓 B.Sc Electrical &amp; Electronic Engineering — Chuka University</span>
+      <span class="hero-ticker-item">⚡ KCSE Grade: B+ — Langa Langa Secondary School</span>
+      <span class="hero-ticker-item">🔬 Engineering · Power Systems · Electronics · Circuit Design</span>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><div class="hero-stat-num" id="statProj">0</div><div class="hero-stat-label">Projects</div></div>
+    <div><div class="hero-stat-num" id="statVid">0</div><div class="hero-stat-label">Videos</div></div>
+    <div><div class="hero-stat-num" id="statArt">0</div><div class="hero-stat-label">Articles</div></div>
+    <div><div class="hero-stat-num" id="statCert">4+</div><div class="hero-stat-label">Certifications</div></div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-banner">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">Engineers don't just build machines — they build the future, one circuit at a time.</p>
+  <p class="quote-author">— Samuel Gatimu Kariuki</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="bg-alt">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-card">⚡</div>
+        <div class="about-float1">
+          <span class="afloat-icon">🎓</span>
+          <div><div class="afloat-main">Chuka University</div><div class="afloat-sub">B.Sc EEE — In Progress</div></div>
+        </div>
+        <div class="about-float2">
+          <span class="afloat-icon">📍</span>
+          <div><div class="afloat-main">Chuka, Kenya</div><div class="afloat-sub">Tharaka-Nithi County</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Passionate Engineer &amp; Creator</h2>
+        <div class="about-text">
+          <p>I'm Samuel Gatimu Kariuki, an Electrical and Electronic Engineering student at Chuka University with a deep passion for electronics, power systems, and technology education.</p>
+          <p>My journey began at Langa Langa Secondary School where I achieved a B+ in KCSE before pursuing my engineering degree at Chuka University. I believe in sharing knowledge — which is why I create educational videos and write engineering articles.</p>
+          <p>My goal is to become a professional Electrical &amp; Electronic Engineer who delivers practical technological solutions for Kenya and Africa.</p>
+        </div>
+        <div class="skill-list" id="skillBars"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Engineering Toolkit</div>
+      <h2 class="section-title">Tools &amp; Technologies</h2>
+      <p class="section-sub">Software, hardware platforms and programming languages I use to build engineering solutions.</p>
+    </div>
+    <div class="toolkit-grid reveal" id="toolkitGrid"></div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey" class="bg-alt">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Career Journey</div>
+      <h2 class="section-title">My Engineering Path</h2>
+      <p class="section-sub">Every milestone that has shaped my engineering career — from school to professional engineer.</p>
+    </div>
+    <div class="timeline" id="timelineContainer"></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Video Library</div>
+      <h2 class="section-title">Engineering Education Channel</h2>
+      <p class="section-sub">Educational videos covering electrical engineering, electronics, mathematics and practical tutorials.</p>
+    </div>
+    <div class="vid-controls reveal">
+      <div class="vid-search-wrap">
+        <span class="vid-search-icon">🔍</span>
+        <input class="vid-search" id="vidSearch" placeholder="Search videos..." oninput="renderVideos()"/>
+      </div>
+      <div class="filter-tabs" id="vidFilterTabs"></div>
+    </div>
+    <div class="vid-grid reveal" id="vidGrid"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="bg-alt">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">Engineering Work</h2>
+      <p class="section-sub">Hands-on projects and practical experiments built during my studies at Chuka University.</p>
+    </div>
+    <div class="proj-grid reveal" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Engineering Blog</div>
+      <h2 class="section-title">Articles &amp; Insights</h2>
+      <p class="section-sub">Sharing knowledge about electrical engineering, technology, and university life in Kenya.</p>
+    </div>
+    <div class="blog-grid reveal" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-alt">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Contact Me</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-left">
+          <h3>Let's Connect</h3>
+          <p>Whether you want to collaborate on an engineering project, discuss technology, ask about my work, or just say hello — I'd love to hear from you.</p>
+          <div class="contact-items">
+            <div class="contact-item"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Location</div><div class="contact-item-val">Chuka, Tharaka-Nithi, Kenya</div></div></div>
+            <div class="contact-item"><div class="contact-item-icon">✉️</div><div><div class="contact-item-label">Email</div><div class="contact-item-val" id="displayEmail">samuelgatimu83@gmail.com</div></div></div>
+            <div class="contact-item"><div class="contact-item-icon">🎓</div><div><div class="contact-item-label">University</div><div class="contact-item-val">Chuka University, Kenya</div></div></div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn" id="linkGitHub" title="GitHub" target="_blank">🐙</a>
+            <a href="#" class="social-btn" id="linkLinkedIn" title="LinkedIn" target="_blank">💼</a>
+            <a href="#" class="social-btn" id="linkYouTube" title="YouTube" target="_blank">▶️</a>
+            <a href="#" class="social-btn" id="linkTwitter" title="Twitter/X" target="_blank">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="cf-title">Send a Message</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" id="cf_first" placeholder="John"/></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" id="cf_last" placeholder="Doe"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" id="cf_email" type="email" placeholder="john@example.com"/></div>
+          <div class="form-group"><label class="form-label">Subject</label><input class="form-input" id="cf_subject" placeholder="Engineering Collaboration"/></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-input" id="cf_message" rows="5" placeholder="Tell me about your project or question..."></textarea></div>
+          <button class="form-submit" id="cfSubmit" onclick="submitContact()">📨 Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Samuel Gatimu Kariuki</div>
+  <p class="footer-text">Electrical &amp; Electronic Engineering · Chuka University, Kenya<br>© 2026 Samuel Gatimu Kariuki. All rights reserved.</p>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal-overlay" id="videoModal" onclick="if(event.target===this)closeModal('videoModal')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="vmTitle">Video</div>
+      <button class="modal-close" onclick="closeModal('videoModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="video-frame" id="vmFrame"></div>
+      <div id="vmMeta"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG MODAL -->
+<div class="modal-overlay" id="blogModal" onclick="if(event.target===this)closeModal('blogModal')">
+  <div class="modal-box" style="max-width:760px">
+    <div class="modal-header">
+      <div class="modal-title" id="bmTitle">Article</div>
+      <button class="modal-close" onclick="closeModal('blogModal')">✕</button>
+    </div>
+    <div class="modal-body" id="bmBody"></div>
+  </div>
+</div>
+
+<!-- ADMIN SHELL -->
+<div class="admin-shell" id="adminShell">
+  <!-- LOGIN SCREEN -->
+  <div class="admin-login-screen" id="adminLoginScreen">
+    <div class="login-card">
+      <div class="login-logo">⚙️ Admin Portal</div>
+      <p class="login-sub">Samuel Gatimu Portfolio — Secure Access</p>
+      <div class="login-error" id="loginError"></div>
+      <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" id="loginEmail" type="email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+      <div class="form-group"><label class="form-label">Password</label><input class="form-input" id="loginPass" type="password" placeholder="Your password" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+      <button class="a-submit" style="width:100%;justify-content:center;margin-top:1rem" onclick="doLogin()" id="loginBtn">🔐 Sign In</button>
+      <p class="login-hint">Default: <strong style="color:var(--accent)">Admin@SGK2026!</strong> — Change after first login</p>
+      <button class="login-back" onclick="closeAdmin()">← Back to website</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="adminDashboard" style="display:none;flex-direction:column;height:100%">
+    <div class="admin-topbar">
+      <div class="admin-topbar-logo">⚙️ Dashboard</div>
+      <div class="admin-topbar-right">
+        <div class="admin-avatar">SG</div>
+        <span>Samuel Gatimu</span>
+        <button class="admin-logout-btn" onclick="doLogout()">Logout</button>
+      </div>
+    </div>
+    <div class="admin-layout" style="flex:1;overflow:hidden">
+      <div class="admin-sidebar">
+        <ul class="sidebar-menu">
+          <li class="sidebar-item active" data-panel="overview" onclick="switchPanel('overview',this)">📊 Overview</li>
+          <li class="sidebar-item" data-panel="videos" onclick="switchPanel('videos',this)">🎥 Videos</li>
+          <li class="sidebar-item" data-panel="projects" onclick="switchPanel('projects',this)">⚡ Projects</li>
+          <li class="sidebar-item" data-panel="blog" onclick="switchPanel('blog',this)">✍️ Blog</li>
+          <li class="sidebar-item" data-panel="timeline" onclick="switchPanel('timeline',this)">📅 Timeline</li>
+          <li class="sidebar-item" data-panel="skills" onclick="switchPanel('skills',this)">🔧 Skills</li>
+          <li class="sidebar-item" data-panel="cv" onclick="switchPanel('cv',this)">📄 CV Manager</li>
+          <li class="sidebar-item" data-panel="vault" onclick="switchPanel('vault',this)">🔒 Document Vault</li>
+          <li class="sidebar-item" data-panel="messages" onclick="switchPanel('messages',this)">📬 Messages</li>
+          <li class="sidebar-item" data-panel="settings" onclick="switchPanel('settings',this)">⚙️ Settings</li>
+        </ul>
+      </div>
+      <div class="admin-content">
+
+        <!-- OVERVIEW -->
+        <div class="admin-panel active" id="p-overview">
+          <div class="panel-heading">Dashboard Overview</div>
+          <div class="stats-grid">
+            <div class="stat-box"><div class="stat-box-num" id="ov-vids">0</div><div class="stat-box-label">Videos</div></div>
+            <div class="stat-box"><div class="stat-box-num" id="ov-projs">0</div><div class="stat-box-label">Projects</div></div>
+            <div class="stat-box"><div class="stat-box-num" id="ov-blogs">0</div><div class="stat-box-label">Articles</div></div>
+            <div class="stat-box"><div class="stat-box-num" id="ov-vault">0</div><div class="stat-box-label">Vault Files</div></div>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">📋 Recent Activity</div>
+            <div class="activity-list" id="activityList"></div>
+          </div>
+        </div>
+
+        <!-- VIDEOS -->
+        <div class="admin-panel" id="p-videos">
+          <div class="panel-heading">🎥 Video Manager</div>
+          <div class="a-card">
+            <div class="a-card-title">➕ Add New Video</div>
+            <div class="a-form-grid">
+              <div class="a-fg a-form-full"><label class="a-label">Video Title *</label><input class="a-input" id="v_title" placeholder="e.g. Kirchhoff's Laws Explained"/></div>
+              <div class="a-fg a-form-full"><label class="a-label">Description</label><textarea class="a-input" id="v_desc" rows="2" placeholder="Short description of the video..."></textarea></div>
+              <div class="a-fg"><label class="a-label">Category *</label>
+                <select class="a-select" id="v_cat">
+                  <option>Engineering Tutorials</option><option>Mathematics</option>
+                  <option>Electronics Practicals</option><option>University Learning</option><option>Technology</option>
+                </select>
+              </div>
+              <div class="a-fg"><label class="a-label">Duration (e.g. 14:32)</label><input class="a-input" id="v_dur" placeholder="00:00"/></div>
+              <div class="a-fg a-form-full"><label class="a-label">YouTube URL *</label><input class="a-input" id="v_url" placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX or https://youtu.be/XXXXX"/></div>
+              <div class="a-fg"><label class="a-label">Thumbnail Emoji</label><input class="a-input" id="v_icon" placeholder="⚡" maxlength="4"/></div>
+            </div>
+            <button class="a-submit" onclick="addVideo()">➕ Add Video</button>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">All Videos (<span id="v_count">0</span>)</div>
+            <div style="overflow-x:auto">
+              <table class="a-table"><thead><tr><th></th><th>Title</th><th>Category</th><th>Duration</th><th>Views</th><th>Actions</th></tr></thead>
+              <tbody id="v_tbody"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="admin-panel" id="p-projects">
+          <div class="panel-heading">⚡ Project Manager</div>
+          <div class="a-card">
+            <div class="a-card-title">➕ Add New Project</div>
+            <div class="a-form-grid">
+              <div class="a-fg a-form-full"><label class="a-label">Project Title *</label><input class="a-input" id="pr_title" placeholder="e.g. Automatic Solar Charge Controller"/></div>
+              <div class="a-fg a-form-full"><label class="a-label">Description *</label><textarea class="a-input" id="pr_desc" rows="3"></textarea></div>
+              <div class="a-fg a-form-full"><label class="a-label">Technologies Used (comma separated)</label><input class="a-input" id="pr_tech" placeholder="Arduino, C++, LTSpice, KiCad"/></div>
+              <div class="a-fg"><label class="a-label">GitHub URL</label><input class="a-input" id="pr_github" placeholder="https://github.com/..."/></div>
+              <div class="a-fg"><label class="a-label">Demo/Live URL</label><input class="a-input" id="pr_demo" placeholder="https://..."/></div>
+              <div class="a-fg"><label class="a-label">Status</label>
+                <select class="a-select" id="pr_status"><option>Completed</option><option>In Progress</option><option>Planning</option></select>
+              </div>
+              <div class="a-fg"><label class="a-label">Icon Emoji</label><input class="a-input" id="pr_icon" placeholder="⚡" maxlength="4"/></div>
+              <div class="a-fg" style="display:flex;align-items:flex-end;padding-bottom:.15rem">
+                <label class="checkbox-wrap"><input type="checkbox" id="pr_featured"/> Mark as Featured Project</label>
+              </div>
+            </div>
+            <button class="a-submit" onclick="addProject()">➕ Add Project</button>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">All Projects (<span id="pr_count">0</span>)</div>
+            <div style="overflow-x:auto">
+              <table class="a-table"><thead><tr><th></th><th>Title</th><th>Tech Stack</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody id="pr_tbody"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOG -->
+        <div class="admin-panel" id="p-blog">
+          <div class="panel-heading">✍️ Blog Manager</div>
+          <div class="a-card">
+            <div class="a-card-title">📝 Write New Article</div>
+            <div class="a-form-grid">
+              <div class="a-fg a-form-full"><label class="a-label">Article Title *</label><input class="a-input" id="b_title" placeholder="e.g. Understanding Three-Phase Power Systems"/></div>
+              <div class="a-fg"><label class="a-label">Category *</label>
+                <select class="a-select" id="b_cat">
+                  <option>Electrical Engineering</option><option>Electronics</option>
+                  <option>University Life</option><option>Tutorials</option><option>Personal Insights</option>
+                </select>
+              </div>
+              <div class="a-fg"><label class="a-label">Read Time (minutes)</label><input class="a-input" id="b_time" type="number" placeholder="5" min="1"/></div>
+              <div class="a-fg a-form-full"><label class="a-label">Short Excerpt</label><textarea class="a-input" id="b_excerpt" rows="2" placeholder="Brief summary shown on the blog card..."></textarea></div>
+              <div class="a-fg a-form-full"><label class="a-label">Full Article Content *</label><textarea class="a-input" id="b_content" rows="12" placeholder="Write your full article here..."></textarea></div>
+              <div class="a-fg"><label class="a-label">Cover Emoji</label><input class="a-input" id="b_icon" placeholder="📝" maxlength="4"/></div>
+            </div>
+            <button class="a-submit" onclick="addBlog()">📝 Publish Article</button>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">All Articles (<span id="b_count">0</span>)</div>
+            <div style="overflow-x:auto">
+              <table class="a-table"><thead><tr><th>Title</th><th>Category</th><th>Read Time</th><th>Date</th><th>Actions</th></tr></thead>
+              <tbody id="b_tbody"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="admin-panel" id="p-timeline">
+          <div class="panel-heading">📅 Career Timeline</div>
+          <div class="a-card">
+            <div class="a-card-title">➕ Add Timeline Entry</div>
+            <div class="a-form-grid">
+              <div class="a-fg a-form-full"><label class="a-label">Title *</label><input class="a-input" id="tl_title" placeholder="e.g. Industrial Attachment at Kenya Power"/></div>
+              <div class="a-fg"><label class="a-label">Institution / Organization</label><input class="a-input" id="tl_inst" placeholder="e.g. Kenya Power &amp; Lighting Co."/></div>
+              <div class="a-fg"><label class="a-label">Date / Period</label><input class="a-input" id="tl_date" placeholder="e.g. 2025 or Jan–Jun 2025"/></div>
+              <div class="a-fg a-form-full"><label class="a-label">Description *</label><textarea class="a-input" id="tl_desc" rows="3"></textarea></div>
+              <div class="a-fg a-form-full"><label class="a-label">Tags (comma separated)</label><input class="a-input" id="tl_tags" placeholder="Engineering, Power Systems, Kenya"/></div>
+            </div>
+            <button class="a-submit" onclick="addTimeline()">➕ Add Entry</button>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">All Timeline Entries (<span id="tl_count">0</span>)</div>
+            <div style="overflow-x:auto">
+              <table class="a-table"><thead><tr><th>Title</th><th>Institution</th><th>Period</th><th>Actions</th></tr></thead>
+              <tbody id="tl_tbody"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="admin-panel" id="p-skills">
+          <div class="panel-heading">🔧 Skills Manager</div>
+          <div class="a-card">
+            <div class="a-card-title">➕ Add Skill / Tool</div>
+            <div class="a-form-grid">
+              <div class="a-fg"><label class="a-label">Skill Name *</label><input class="a-input" id="sk_name" placeholder="e.g. MATLAB"/></div>
+              <div class="a-fg"><label class="a-label">Emoji Icon</label><input class="a-input" id="sk_icon" placeholder="⚡" maxlength="4"/></div>
+              <div class="a-fg"><label class="a-label">Proficiency % (1–100)</label><input class="a-input" id="sk_level" type="number" min="1" max="100" placeholder="80"/></div>
+              <div class="a-fg"><label class="a-label">Category</label>
+                <select class="a-select" id="sk_cat">
+                  <option>Engineering Software</option><option>Programming</option><option>Hardware</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <button class="a-submit" onclick="addSkill()">➕ Add Skill</button>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">All Skills (<span id="sk_count">0</span>)</div>
+            <div style="overflow-x:auto">
+              <table class="a-table"><thead><tr><th>Icon</th><th>Skill</th><th>Category</th><th>Level</th><th>Actions</th></tr></thead>
+              <tbody id="sk_tbody"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- CV -->
+        <div class="admin-panel" id="p-cv">
+          <div class="panel-heading">📄 CV Manager</div>
+          <div class="a-card">
+            <div class="a-card-title">Auto-Generated CV Preview</div>
+            <p style="color:var(--text2);font-size:.84rem;margin-bottom:1.2rem">Your CV automatically includes all projects, skills, and timeline entries you add via this dashboard.</p>
+            <div class="cv-preview-box" id="cvPreviewBox"></div>
+            <div style="display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap">
+              <button class="a-submit" onclick="downloadCV()">📄 Download CV</button>
+              <button style="background:var(--surface2);border:1px solid var(--border);color:var(--text2);padding:.6rem 1.2rem;border-radius:8px;font-size:.84rem;cursor:pointer" onclick="buildCVPreview()">🔄 Refresh</button>
+            </div>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title">Update Contact Info</div>
+            <div class="a-form-grid">
+              <div class="a-fg"><label class="a-label">Email</label><input class="a-input" id="info_email" placeholder="samuelgatimu83@gmail.com"/></div>
+              <div class="a-fg"><label class="a-label">Phone</label><input class="a-input" id="info_phone" placeholder="+254 700 000 000"/></div>
+              <div class="a-fg"><label class="a-label">GitHub</label><input class="a-input" id="info_github" placeholder="github.com/samuelgatimu"/></div>
+              <div class="a-fg"><label class="a-label">LinkedIn</label><input class="a-input" id="info_linkedin" placeholder="linkedin.com/in/samuelgatimu"/></div>
+              <div class="a-fg"><label class="a-label">YouTube Channel URL</label><input class="a-input" id="info_youtube" placeholder="https://youtube.com/@..."/></div>
+              <div class="a-fg"><label class="a-label">Twitter/X URL</label><input class="a-input" id="info_twitter" placeholder="https://twitter.com/..."/></div>
+            </div>
+            <button class="a-submit" onclick="saveContactInfo()">💾 Save &amp; Apply to Website</button>
+          </div>
+        </div>
+
+        <!-- VAULT -->
+        <div class="admin-panel" id="p-vault">
+          <div class="panel-heading">🔒 Private Document Vault</div>
+          <div class="vault-notice">⚠️ Files stored here are private and encrypted locally. They are never visible on the public website. Admin login required to access.</div>
+          <div class="a-card">
+            <div class="a-card-title">Upload Private Document</div>
+            <div class="upload-zone" id="uploadZone" onclick="document.getElementById('vaultFileInput').click()">
+              <input type="file" id="vaultFileInput" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.txt" onchange="handleVaultUpload(this)"/>
+              <div class="upload-icon">📁</div>
+              <div class="upload-text">Click to upload a file</div>
+              <div class="upload-sub">Supports: PDF, JPG, PNG, DOC, TXT (Max 10MB per file)</div>
+            </div>
+            <div class="vault-files" id="vaultFilesGrid"></div>
+          </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="admin-panel" id="p-messages">
+          <div class="panel-heading">📬 Contact Messages</div>
+          <div class="a-card">
+            <div class="a-card-title">Received Messages (<span id="msg_count">0</span>)</div>
+            <div style="overflow-x:auto">
+              <table class="a-table"><thead><tr><th>Name</th><th>Email</th><th>Subject</th><th>Date</th><th>Actions</th></tr></thead>
+              <tbody id="msg_tbody"></tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="admin-panel" id="p-settings">
+          <div class="panel-heading">⚙️ Account Settings</div>
+          <div class="a-card">
+            <div class="a-card-title">🔐 Change Password</div>
+            <p style="color:var(--text2);font-size:.84rem;margin-bottom:1.2rem">Password must be at least 12 characters with uppercase, lowercase, number and special character.</p>
+            <div class="form-group"><label class="form-label">Current Password</label><input class="form-input" id="s_curr" type="password" placeholder="Current password"/></div>
+            <div class="form-group"><label class="form-label">New Password</label><input class="form-input" id="s_new" type="password" placeholder="New password (12+ chars)"/></div>
+            <div class="form-group"><label class="form-label">Confirm New Password</label><input class="form-input" id="s_confirm" type="password" placeholder="Repeat new password"/></div>
+            <button class="a-submit" onclick="changePassword()">🔐 Update Password</button>
+          </div>
+          <div class="a-card">
+            <div class="a-card-title" style="color:var(--red)">⚠️ Danger Zone</div>
+            <p style="color:var(--text2);font-size:.84rem;margin-bottom:1rem">This permanently deletes all content. Cannot be undone.</p>
+            <button style="background:rgba(255,61,85,.1);border:1px solid rgba(255,61,85,.3);color:var(--red);padding:.65rem 1.5rem;border-radius:8px;font-size:.85rem;cursor:pointer;font-weight:600" onclick="dangerClearAll()">🗑️ Clear All Portfolio Data</button>
+          </div>
+        </div>
+
+      </div><!-- end admin-content -->
+    </div><!-- end admin-layout -->
+  </div><!-- end adminDashboard -->
+</div><!-- end adminShell -->
+
+<script>
+// ═══════════════════════════════════════════════════════
+// DATABASE — localStorage persistence layer
+// ═══════════════════════════════════════════════════════
+const DB={
+  get(k){try{const v=localStorage.getItem('sgk_'+k);return v?JSON.parse(v):null}catch{return null}},
+  set(k,v){try{localStorage.setItem('sgk_'+k,JSON.stringify(v))}catch(e){console.warn('Storage error',e)}},
+  del(k){localStorage.removeItem('sgk_'+k)}
+};
+const getVideos=()=>DB.get('videos')||seedVideos();
+const getProjects=()=>DB.get('projects')||seedProjects();
+const getBlog=()=>DB.get('blog')||seedBlog();
+const getTimeline=()=>DB.get('timeline')||seedTimeline();
+const getSkills=()=>DB.get('skills')||seedSkills();
+const getVault=()=>DB.get('vault')||[];
+const getMessages=()=>DB.get('messages')||[];
+const getInfo=()=>DB.get('info')||{email:'samuelgatimu83@gmail.com',phone:'+254 700 000 000',github:'github.com/samuelgatimu',linkedin:'linkedin.com/in/samuelgatimu',youtube:'',twitter:''};
+const getActivity=()=>DB.get('activity')||[];
+function logAct(msg){const a=getActivity();a.unshift({msg,t:new Date().toLocaleString()});DB.set('activity',a.slice(0,25))}
+
+// ═══════════════════════════════════════════════════════
+// AUTH — Real password protection with lockout
+// ═══════════════════════════════════════════════════════
+const DEFAULT_PW='Admin@SGK2026!';
+function hashPW(p){let h=5381;for(let i=0;i<p.length;i++)h=((h<<5)+h)^p.charCodeAt(i);return'sgk'+(h>>>0).toString(36)+p.length.toString(16)}
+function getStoredPW(){return DB.get('pw')||hashPW(DEFAULT_PW)}
+function checkPW(p){return hashPW(p)===getStoredPW()}
+let failCount=0;
+let lockEnd=DB.get('lockEnd')||0;
+
+function doLogin(){
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPass').value;
+  const errEl=document.getElementById('loginError');
+  const now=Date.now();
+  if(now<lockEnd){showLoginErr('Account locked. Try again in '+Math.ceil((lockEnd-now)/60000)+' minute(s).');return}
+  if(!email){showLoginErr('Please enter your email address.');return}
+  if(!pass){showLoginErr('Please enter your password.');return}
+  if(!checkPW(pass)){
+    failCount++;
+    if(failCount>=5){const e=Date.now()+15*60*1000;lockEnd=e;DB.set('lockEnd',e);showLoginErr('Too many failed attempts. Locked for 15 minutes.');}
+    else showLoginErr('Incorrect password. '+(5-failCount)+' attempt(s) remaining.');
+    document.getElementById('loginPass').value='';return;
+  }
+  failCount=0;DB.del('lockEnd');lockEnd=0;
+  errEl.classList.remove('show');
+  document.getElementById('adminLoginScreen').style.display='none';
+  const d=document.getElementById('adminDashboard');d.style.display='flex';d.style.flexDirection='column';
+  refreshOverview();renderAdminTables();buildCVPreview();renderVaultFiles();
+  logAct('Admin signed in');
+}
+function doLogout(){
+  document.getElementById('adminDashboard').style.display='none';
+  document.getElementById('adminLoginScreen').style.display='flex';
+  document.getElementById('loginPass').value='';
+  document.getElementById('loginError').classList.remove('show');
+}
+function showLoginErr(m){const e=document.getElementById('loginError');e.textContent=m;e.classList.add('show')}
+function openAdmin(){document.getElementById('adminShell').classList.add('open');document.body.style.overflow='hidden'}
+function closeAdmin(){document.getElementById('adminShell').classList.remove('open');document.body.style.overflow=''}
+function changePassword(){
+  const c=document.getElementById('s_curr').value;
+  const n=document.getElementById('s_new').value;
+  const cf=document.getElementById('s_confirm').value;
+  if(!checkPW(c)){showToast('Current password is wrong','❌',true);return}
+  if(n.length<12){showToast('Password must be 12+ characters','❌',true);return}
+  if(!/[A-Z]/.test(n)||!/[a-z]/.test(n)||!/[0-9]/.test(n)||!/[^A-Za-z0-9]/.test(n)){showToast('Need uppercase, lowercase, number & special char','❌',true);return}
+  if(n!==cf){showToast('Passwords do not match','❌',true);return}
+  DB.set('pw',hashPW(n));
+  ['s_curr','s_new','s_confirm'].forEach(id=>document.getElementById(id).value='');
+  showToast('Password updated successfully!','✅');logAct('Password changed');
+}
+function dangerClearAll(){
+  const a=prompt('Type RESET to confirm deleting everything:');
+  if(a!=='RESET')return;
+  ['videos','projects','blog','timeline','skills','vault','messages','activity'].forEach(k=>DB.del(k));
+  renderAll();refreshOverview();showToast('All data cleared','🗑️');
+}
+
+// ═══════════════════════════════════════════════════════
+// VIDEOS
+// ═══════════════════════════════════════════════════════
+let vidFilterCat='all';
+function addVideo(){
+  const t=document.getElementById('v_title').value.trim();
+  const url=document.getElementById('v_url').value.trim();
+  if(!t){showToast('Video title is required','❌',true);return}
+  if(!url){showToast('YouTube URL is required','❌',true);return}
+  if(!url.includes('youtube.com')&&!url.includes('youtu.be')){showToast('Please enter a valid YouTube URL','❌',true);return}
+  const vids=getVideos();
+  vids.unshift({id:Date.now(),title:t,desc:document.getElementById('v_desc').value.trim(),cat:document.getElementById('v_cat').value,dur:document.getElementById('v_dur').value||'0:00',url,icon:document.getElementById('v_icon').value||'▶️',views:0,date:new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})});
+  DB.set('videos',vids);
+  clearInputs(['v_title','v_desc','v_dur','v_url','v_icon']);
+  renderVideos();renderAdminTables();refreshOverview();updateHeroStats();
+  showToast('Video added successfully!','🎥');logAct('Added video: "'+t+'"');
+}
+function deleteVideo(id){
+  if(!confirm('Delete this video?'))return;
+  DB.set('videos',getVideos().filter(v=>v.id!==id));
+  renderVideos();renderAdminTables();refreshOverview();updateHeroStats();showToast('Video deleted','🗑️');
+}
+function getYTEmbedURL(url){
+  const m=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s?]+)/);
+  return m?'https://www.youtube.com/embed/'+m[1]+'?autoplay=1&rel=0':null;
+}
+function openVideoModal(id){
+  const v=getVideos().find(x=>x.id===id);if(!v)return;
+  const vids=getVideos();const i=vids.findIndex(x=>x.id===id);
+  if(i>=0){vids[i].views=(vids[i].views||0)+1;DB.set('videos',vids)}
+  document.getElementById('vmTitle').textContent=v.title;
+  const embed=getYTEmbedURL(v.url);
+  document.getElementById('vmFrame').innerHTML=embed
+    ?'<iframe src="'+embed+'" allowfullscreen allow="autoplay; encrypted-media"></iframe>'
+    :'<div class="video-no-url"><div class="big-icon">'+v.icon+'</div><p>YouTube URL not set for this video.<br>Add it via Admin → Videos</p></div>';
+  document.getElementById('vmMeta').innerHTML='<p style="margin-bottom:.5rem"><strong>'+v.cat+'</strong> · '+v.date+' · '+v.dur+'</p><p style="color:var(--text2);font-size:.87rem">'+v.desc+'</p><p style="color:var(--text3);font-size:.75rem;margin-top:.5rem">👁 '+(v.views||0).toLocaleString()+' views</p>';
+  openModal('videoModal');
+}
+
+// ═══════════════════════════════════════════════════════
+// PROJECTS
+// ═══════════════════════════════════════════════════════
+function addProject(){
+  const t=document.getElementById('pr_title').value.trim();
+  const d=document.getElementById('pr_desc').value.trim();
+  if(!t||!d){showToast('Title and description are required','❌',true);return}
+  const projs=getProjects();
+  projs.unshift({id:Date.now(),title:t,desc:d,tech:document.getElementById('pr_tech').value.split(',').map(s=>s.trim()).filter(Boolean),github:document.getElementById('pr_github').value.trim(),demo:document.getElementById('pr_demo').value.trim(),status:document.getElementById('pr_status').value,icon:document.getElementById('pr_icon').value||'⚡',featured:document.getElementById('pr_featured').checked,date:new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})});
+  DB.set('projects',projs);
+  clearInputs(['pr_title','pr_desc','pr_tech','pr_github','pr_demo','pr_icon']);
+  document.getElementById('pr_featured').checked=false;
+  renderProjects();renderAdminTables();refreshOverview();updateHeroStats();
+  showToast('Project added! CV updated.','⚡');logAct('Added project: "'+t+'"');
+}
+function deleteProject(id){
+  if(!confirm('Delete this project?'))return;
+  DB.set('projects',getProjects().filter(p=>p.id!==id));
+  renderProjects();renderAdminTables();refreshOverview();updateHeroStats();showToast('Project deleted','🗑️');
+}
+
+// ═══════════════════════════════════════════════════════
+// BLOG
+// ═══════════════════════════════════════════════════════
+function addBlog(){
+  const t=document.getElementById('b_title').value.trim();
+  const content=document.getElementById('b_content').value.trim();
+  if(!t||!content){showToast('Title and content are required','❌',true);return}
+  const posts=getBlog();
+  const readTime=parseInt(document.getElementById('b_time').value)||Math.max(1,Math.round(content.split(/\s+/).length/200));
+  posts.unshift({id:Date.now(),title:t,content,cat:document.getElementById('b_cat').value,excerpt:document.getElementById('b_excerpt').value.trim()||content.substring(0,160)+'...',readTime,icon:document.getElementById('b_icon').value||'📝',date:new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})});
+  DB.set('blog',posts);
+  clearInputs(['b_title','b_excerpt','b_content','b_icon']);document.getElementById('b_time').value='';
+  renderBlog();renderAdminTables();refreshOverview();updateHeroStats();
+  showToast('Article published!','✍️');logAct('Published: "'+t+'"');
+}
+function deleteBlog(id){
+  if(!confirm('Delete this article?'))return;
+  DB.set('blog',getBlog().filter(b=>b.id!==id));
+  renderBlog();renderAdminTables();refreshOverview();updateHeroStats();showToast('Article deleted','🗑️');
+}
+function openBlogModal(id){
+  const b=getBlog().find(x=>x.id===id);if(!b)return;
+  document.getElementById('bmTitle').textContent=b.title;
+  document.getElementById('bmBody').innerHTML='<div style="margin-bottom:1rem"><span class="blog-cat">'+b.cat+'</span> &nbsp;·&nbsp; <span style="color:var(--text3);font-size:.75rem">'+b.date+' · '+b.readTime+' min read</span></div><div style="color:var(--text2);line-height:1.9;font-size:.92rem;white-space:pre-wrap">'+b.content+'</div>';
+  openModal('blogModal');
+}
+
+// ═══════════════════════════════════════════════════════
+// TIMELINE
+// ═══════════════════════════════════════════════════════
+function addTimeline(){
+  const t=document.getElementById('tl_title').value.trim();
+  const d=document.getElementById('tl_desc').value.trim();
+  if(!t||!d){showToast('Title and description are required','❌',true);return}
+  const tls=getTimeline();
+  tls.push({id:Date.now(),title:t,inst:document.getElementById('tl_inst').value.trim(),date:document.getElementById('tl_date').value.trim()||String(new Date().getFullYear()),desc:d,tags:document.getElementById('tl_tags').value.split(',').map(s=>s.trim()).filter(Boolean)});
+  DB.set('timeline',tls);
+  clearInputs(['tl_title','tl_inst','tl_date','tl_desc','tl_tags']);
+  renderTimeline();renderAdminTables();showToast('Timeline entry added!','📅');logAct('Added timeline: "'+t+'"');
+}
+function deleteTimeline(id){
+  if(!confirm('Delete this entry?'))return;
+  DB.set('timeline',getTimeline().filter(t=>t.id!==id));
+  renderTimeline();renderAdminTables();showToast('Entry deleted','🗑️');
+}
+
+// ═══════════════════════════════════════════════════════
+// SKILLS
+// ═══════════════════════════════════════════════════════
+function addSkill(){
+  const n=document.getElementById('sk_name').value.trim();
+  if(!n){showToast('Skill name is required','❌',true);return}
+  const lvl=Math.min(100,Math.max(1,parseInt(document.getElementById('sk_level').value)||70));
+  const sk=getSkills();
+  sk.push({id:Date.now(),name:n,icon:document.getElementById('sk_icon').value||'🔧',level:lvl,cat:document.getElementById('sk_cat').value});
+  DB.set('skills',sk);
+  clearInputs(['sk_name','sk_icon','sk_level']);
+  renderSkills();renderAdminTables();showToast('Skill added!','🔧');logAct('Added skill: "'+n+'"');
+}
+function deleteSkill(id){
+  if(!confirm('Delete this skill?'))return;
+  DB.set('skills',getSkills().filter(s=>s.id!==id));
+  renderSkills();renderAdminTables();showToast('Skill deleted','🗑️');
+}
+
+// ═══════════════════════════════════════════════════════
+// VAULT
+// ═══════════════════════════════════════════════════════
+function handleVaultUpload(input){
+  const file=input.files[0];if(!file)return;
+  if(file.size>10*1024*1024){showToast('File too large. Max 10MB.','❌',true);input.value='';return}
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const v=getVault();
+    v.push({id:Date.now(),name:file.name,type:file.type,size:file.size,data:e.target.result,date:new Date().toLocaleDateString()});
+    DB.set('vault',v);renderVaultFiles();refreshOverview();
+    showToast('"'+file.name+'" saved to vault','🔒');logAct('Vault upload: "'+file.name+'"');
+    input.value='';
+  };
+  reader.readAsDataURL(file);
+}
+function deleteVaultFile(id){
+  if(!confirm('Permanently delete this file?'))return;
+  DB.set('vault',getVault().filter(f=>f.id!==id));renderVaultFiles();refreshOverview();showToast('File deleted','🗑️');
+}
+function downloadVaultFile(id){
+  const f=getVault().find(x=>x.id===id);if(!f)return;
+  const a=document.createElement('a');a.href=f.data;a.download=f.name;a.click();showToast('Downloading...','📥');
+}
+function renderVaultFiles(){
+  const g=document.getElementById('vaultFilesGrid');if(!g)return;
+  const v=getVault();
+  if(!v.length){g.innerHTML='<p style="color:var(--text3);font-size:.84rem;grid-column:1/-1;padding:1rem;text-align:center">No files yet. Upload your first document above.</p>';return}
+  const icons={'application/pdf':'📄','image/jpeg':'🖼️','image/png':'🖼️','image/jpg':'🖼️','text/plain':'📝'};
+  g.innerHTML=v.map(f=>`<div class="vault-file"><button class="vault-del-btn" onclick="deleteVaultFile(${f.id})" title="Delete">✕</button><div class="vault-file-icon">${icons[f.type]||'📎'}</div><div class="vault-file-name">${f.name}</div><div class="vault-file-size">${(f.size/1024).toFixed(1)} KB · ${f.date}</div><div class="vault-file-enc">🔐 Secured</div><button class="vault-download-btn" onclick="downloadVaultFile(${f.id})">⬇ Download</button></div>`).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+// CONTACT FORM
+// ═══════════════════════════════════════════════════════
+function submitContact(){
+  const fn=document.getElementById('cf_first').value.trim();
+  const em=document.getElementById('cf_email').value.trim();
+  const msg=document.getElementById('cf_message').value.trim();
+  if(!fn||!em||!msg){showToast('Name, email and message are required','❌',true);return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){showToast('Please enter a valid email address','❌',true);return}
+  const btn=document.getElementById('cfSubmit');btn.disabled=true;btn.textContent='Sending...';
+  setTimeout(()=>{
+    const msgs=getMessages();
+    msgs.push({id:Date.now(),name:fn+' '+document.getElementById('cf_last').value,email:em,subject:document.getElementById('cf_subject').value||'(No subject)',message:msg,date:new Date().toLocaleString()});
+    DB.set('messages',msgs);
+    ['cf_first','cf_last','cf_email','cf_subject','cf_message'].forEach(id=>document.getElementById(id).value='');
+    btn.disabled=false;btn.innerHTML='📨 Send Message';
+    showToast('Message sent! Samuel will reply soon.','✅');
+    logAct('New message from '+fn+' ('+em+')');
+  },1200);
+}
+
+// ═══════════════════════════════════════════════════════
+// CONTACT INFO
+// ═══════════════════════════════════════════════════════
+function saveContactInfo(){
+  const info={
+    email:document.getElementById('info_email').value.trim()||'samuelgatimu83@gmail.com',
+    phone:document.getElementById('info_phone').value.trim(),
+    github:document.getElementById('info_github').value.trim(),
+    linkedin:document.getElementById('info_linkedin').value.trim(),
+    youtube:document.getElementById('info_youtube').value.trim(),
+    twitter:document.getElementById('info_twitter').value.trim()
+  };
+  DB.set('info',info);applyContactInfo(info);buildCVPreview();
+  showToast('Contact info saved & applied!','✅');logAct('Updated contact info');
+}
+function applyContactInfo(info){
+  const em=document.getElementById('displayEmail');if(em)em.textContent=info.email;
+  const gh=document.getElementById('linkGitHub');if(gh)gh.href=info.github?'https://'+info.github.replace(/^https?:\/\//,''):'#';
+  const li=document.getElementById('linkLinkedIn');if(li)li.href=info.linkedin?'https://'+info.linkedin.replace(/^https?:\/\//,''):'#';
+  const yt=document.getElementById('linkYouTube');if(yt)yt.href=info.youtube||'#';
+  const tw=document.getElementById('linkTwitter');if(tw)tw.href=info.twitter||'#';
+  const cvE=document.getElementById('info_email');if(cvE)cvE.value=info.email;
+  const cvP=document.getElementById('info_phone');if(cvP)cvP.value=info.phone||'';
+  const cvG=document.getElementById('info_github');if(cvG)cvG.value=info.github||'';
+  const cvL=document.getElementById('info_linkedin');if(cvL)cvL.value=info.linkedin||'';
+  const cvY=document.getElementById('info_youtube');if(cvY)cvY.value=info.youtube||'';
+  const cvT=document.getElementById('info_twitter');if(cvT)cvT.value=info.twitter||'';
+}
+
+// ═══════════════════════════════════════════════════════
+// CV
+// ═══════════════════════════════════════════════════════
+function buildCVPreview(){
+  const el=document.getElementById('cvPreviewBox');if(!el)return;
+  const info=getInfo();const projs=getProjects();const sk=getSkills();const tl=getTimeline();
+  el.innerHTML=`<div class="cv-name">Samuel Gatimu Kariuki</div><div class="cv-role">Electrical &amp; Electronic Engineering Student | Technology Creator</div><div class="cv-contact">${info.email} · ${info.phone||'+254 700 000 000'} · ${info.github||'github.com/samuelgatimu'}</div><hr class="cv-divider"/><div style="margin-bottom:.6rem"><strong>Education:</strong> B.Sc EEE — Chuka University (2022–Present) | KCSE B+ — Langa Langa Secondary School</div><div style="margin-bottom:.6rem"><strong>Projects (${projs.length}):</strong> ${projs.slice(0,4).map(p=>p.title).join(' · ')}${projs.length>4?' · ...':''}</div><div style="margin-bottom:.6rem"><strong>Skills (${sk.length}):</strong> ${sk.map(s=>s.name).slice(0,7).join(', ')}${sk.length>7?', ...':''}</div><div style="color:var(--text3);font-size:.73rem;margin-top:.8rem">Auto-generated · Updated ${new Date().toLocaleDateString()}</div>`;
+}
+function downloadCV(){
+  const info=getInfo();const projs=getProjects();const sk=getSkills();const tl=getTimeline();const blog=getBlog();
+  const txt=`CURRICULUM VITAE
+${'═'.repeat(62)}
+SAMUEL GATIMU KARIUKI
+Electrical & Electronic Engineering Student | Technology Creator
+
+Location : Chuka, Tharaka-Nithi, Kenya
+Email    : ${info.email}
+Phone    : ${info.phone||'+254 700 000 000'}
+GitHub   : ${info.github||'github.com/samuelgatimu'}
+LinkedIn : ${info.linkedin||'linkedin.com/in/samuelgatimu'}
+Website  : samuelgatimu.github.io
+
+${'═'.repeat(62)}
+PROFESSIONAL SUMMARY
+${'─'.repeat(62)}
+Passionate Electrical and Electronic Engineering student at Chuka
+University with hands-on experience in circuit design, embedded systems,
+power electronics, and educational content creation. Dedicated to
+advancing engineering knowledge and delivering practical tech solutions
+for Kenya and Africa.
+
+${'═'.repeat(62)}
+EDUCATION
+${'─'.repeat(62)}
+B.Sc Electrical & Electronic Engineering
+Chuka University | 2022 – Present
+
+Kenya Certificate of Secondary Education (KCSE) — Grade: B+
+Langa Langa Secondary School | 2018 – 2021
+
+${'═'.repeat(62)}
+CAREER TIMELINE
+${'─'.repeat(62)}
+${tl.map(t=>`${t.date.padEnd(18)} ${t.title}\n${' '.repeat(20)}${t.inst||''}\n${' '.repeat(20)}${t.desc}`).join('\n\n')}
+
+${'═'.repeat(62)}
+PROJECTS (${projs.length} Total)
+${'─'.repeat(62)}
+${projs.map(p=>`• ${p.title} [${p.status}]\n  Tech: ${(p.tech||[]).join(', ')||'N/A'}${p.github?'\n  GitHub: '+p.github:''}`).join('\n\n')}
+
+${'═'.repeat(62)}
+SKILLS & TOOLS (${sk.length} Total)
+${'─'.repeat(62)}
+${sk.map(s=>`• ${s.name.padEnd(22)} ${s.level}% proficiency`).join('\n')}
+
+${'═'.repeat(62)}
+BLOG & CONTENT (${blog.length} Articles)
+${'─'.repeat(62)}
+${blog.map(b=>`• ${b.title} [${b.cat}] — ${b.date}`).join('\n')}
+
+${'═'.repeat(62)}
+Generated: ${new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})}
+Portfolio: samuelgatimu.github.io`;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));
+  a.download='Samuel_Gatimu_Kariuki_CV_'+new Date().getFullYear()+'.txt';a.click();
+  showToast('CV downloaded!','📄');logAct('CV downloaded');
+}
+
+// ═══════════════════════════════════════════════════════
+// RENDER — Public site sections
+// ═══════════════════════════════════════════════════════
+function renderVideos(){
+  const search=(document.getElementById('vidSearch')||{}).value?.toLowerCase()||'';
+  const vids=getVideos();
+  // Build filter tabs (only once)
+  const ftEl=document.getElementById('vidFilterTabs');
+  if(ftEl&&!ftEl.dataset.built){
+    const cats=['all',...new Set(vids.map(v=>v.cat))];
+    ftEl.innerHTML=cats.map(c=>`<button class="ftab${c==='all'?' active':''}" onclick="vidFilterCat='${c}';document.querySelectorAll('.ftab').forEach(b=>{b.classList.remove('active')});this.classList.add('active');renderVideos()">${c==='all'?'All Videos':c}</button>`).join('');
+    ftEl.dataset.built='1';
+  }
+  const filtered=vids.filter(v=>{
+    const catOk=vidFilterCat==='all'||v.cat===vidFilterCat;
+    const searchOk=!search||v.title.toLowerCase().includes(search)||v.desc?.toLowerCase().includes(search);
+    return catOk&&searchOk;
+  });
+  const g=document.getElementById('vidGrid');if(!g)return;
+  if(!filtered.length){g.innerHTML='<div class="vid-empty">No videos found. Try a different search.</div>';return}
+  g.innerHTML=filtered.map(v=>`<div class="vid-card" onclick="openVideoModal(${v.id})"><div class="vid-thumb"><div class="vid-thumb-bg"></div><div class="vid-thumb-emoji">${v.icon||'▶️'}</div><div class="vid-overlay"><div class="vid-play-btn">▶</div></div><span class="vid-duration">${v.dur}</span></div><div class="vid-info"><div class="vid-cat-badge">${v.cat}</div><div class="vid-title">${v.title}</div><div class="vid-desc">${v.desc||''}</div><div class="vid-meta"><span>👁 ${(v.views||0).toLocaleString()}</span><span>📅 ${v.date}</span></div></div></div>`).join('');
+}
+function renderProjects(){
+  const g=document.getElementById('projGrid');if(!g)return;
+  const projs=getProjects();
+  if(!projs.length){g.innerHTML='<p style="color:var(--text3);padding:2rem;text-align:center;grid-column:1/-1">No projects yet. Add them via Admin → Projects.</p>';return}
+  g.innerHTML=projs.map(p=>`<div class="proj-card${p.featured?' featured':''}"><div class="proj-media"><div class="proj-media-overlay"></div><div class="proj-media-icon">${p.icon||'⚡'}</div></div><div class="proj-body">${p.featured?'<div class="proj-featured-badge">⭐ Featured</div>':''}<div class="proj-title">${p.title}</div><div class="proj-desc">${p.desc}</div><div class="proj-techs">${(p.tech||[]).map(t=>'<span class="proj-tech">'+t+'</span>').join('')}</div><div class="proj-status-row"><span class="proj-status-dot" style="background:${p.status==='Completed'?'var(--green)':p.status==='In Progress'?'var(--gold)':'var(--text3)'}"></span>${p.status}</div><div class="proj-links">${p.github?'<a href="'+ensureHTTPS(p.github)+'" target="_blank" class="proj-link">🐙 GitHub</a>':''} ${p.demo?'<a href="'+ensureHTTPS(p.demo)+'" target="_blank" class="proj-link primary">🔗 Demo</a>':''}<button class="proj-link" onclick="showToast('${p.title.replace(/'/g,"\\'")}','📋')">View Details</button></div></div></div>`).join('');
+}
+function renderBlog(){
+  const g=document.getElementById('blogGrid');if(!g)return;
+  const posts=getBlog();
+  if(!posts.length){g.innerHTML='<p style="color:var(--text3);padding:2rem;text-align:center;grid-column:1/-1">No articles yet. Write your first one via Admin → Blog.</p>';return}
+  const bgs=['linear-gradient(135deg,#0a1e2e,#061420)','linear-gradient(135deg,#0f2035,#03080e)','linear-gradient(135deg,#122034,#071520)'];
+  g.innerHTML=posts.map((b,i)=>`<div class="blog-card" onclick="openBlogModal(${b.id})"><div class="blog-cover"><div class="blog-cover-bg" style="background:${bgs[i%bgs.length]}"></div><span class="blog-cover-icon">${b.icon||'📝'}</span></div><div class="blog-body"><div class="blog-cat">${b.cat}</div><div class="blog-title">${b.title}</div><div class="blog-excerpt">${b.excerpt}</div><div class="blog-footer"><div class="blog-author-wrap"><div class="blog-avatar">SG</div><span>Samuel Gatimu</span></div><span>${b.date} · ${b.readTime} min</span></div></div></div>`).join('');
+}
+function renderTimeline(){
+  const c=document.getElementById('timelineContainer');if(!c)return;
+  const tls=getTimeline();
+  c.innerHTML=tls.map((t,i)=>`<div class="tl-entry" style="transition-delay:${i*.08}s"><div class="tl-dot"></div><div class="tl-year">${t.date}</div><div class="tl-title">${t.title}</div>${t.inst?'<div class="tl-inst">📍 '+t.inst+'</div>':''}<div class="tl-desc">${t.desc}</div>${t.tags?.length?'<div class="tl-tags">'+t.tags.map(tg=>'<span class="tl-tag">'+tg+'</span>').join('')+'</div>':''}</div>`).join('');
+  c.querySelectorAll('.tl-entry').forEach(el=>scrollObserver.observe(el));
+}
+function renderSkills(){
+  // About section skill bars
+  const sb=document.getElementById('skillBars');
+  if(sb){const sk=getSkills().slice(0,6);sb.innerHTML=sk.map(s=>`<div><div class="skill-item-label"><span>${s.name}</span><span>${s.level}%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="${s.level}"></div></div></div>`).join('')}
+  // Toolkit grid
+  const tg=document.getElementById('toolkitGrid');
+  if(tg){tg.innerHTML=getSkills().map(s=>`<div class="toolkit-card"><div class="toolkit-icon">${s.icon||'🔧'}</div><div class="toolkit-name">${s.name}</div><div class="toolkit-level"><div class="toolkit-level-fill" data-w="${s.level}"></div></div></div>`).join('')}
+  // Trigger visible fills
+  document.querySelectorAll('.skill-bar-fill[data-w],.toolkit-level-fill[data-w]').forEach(el=>{
+    setTimeout(()=>el.style.width=el.dataset.w+'%',300);
+  });
+}
+function renderAdminTables(){
+  // Videos table
+  const vt=document.getElementById('v_tbody');
+  if(vt){const v=getVideos();document.getElementById('v_count').textContent=v.length;vt.innerHTML=v.map(x=>`<tr><td>${x.icon}</td><td>${x.title}</td><td><span class="badge badge-blue">${x.cat}</span></td><td style="font-family:var(--font-mono);font-size:.75rem">${x.dur}</td><td>${x.views||0}</td><td><div class="a-actions"><button class="a-btn danger" onclick="deleteVideo(${x.id})">🗑 Delete</button></div></td></tr>`).join('')}
+  // Projects table
+  const pt=document.getElementById('pr_tbody');
+  if(pt){const p=getProjects();document.getElementById('pr_count').textContent=p.length;pt.innerHTML=p.map(x=>`<tr><td>${x.icon}</td><td>${x.title}</td><td style="font-size:.75rem;color:var(--text3)">${(x.tech||[]).slice(0,3).join(', ')}</td><td><span class="badge ${x.status==='Completed'?'badge-green':'badge-gold'}">${x.status}</span></td><td><div class="a-actions"><button class="a-btn danger" onclick="deleteProject(${x.id})">🗑 Delete</button></div></td></tr>`).join('')}
+  // Blog table
+  const bt=document.getElementById('b_tbody');
+  if(bt){const b=getBlog();document.getElementById('b_count').textContent=b.length;bt.innerHTML=b.map(x=>`<tr><td>${x.title}</td><td><span class="badge badge-blue">${x.cat}</span></td><td>${x.readTime} min</td><td>${x.date}</td><td><div class="a-actions"><button class="a-btn" onclick="openBlogModal(${x.id})">👁 View</button><button class="a-btn danger" onclick="deleteBlog(${x.id})">🗑 Delete</button></div></td></tr>`).join('')}
+  // Timeline table
+  const tlt=document.getElementById('tl_tbody');
+  if(tlt){const t=getTimeline();document.getElementById('tl_count').textContent=t.length;tlt.innerHTML=t.map(x=>`<tr><td>${x.title}</td><td>${x.inst||'—'}</td><td>${x.date}</td><td><div class="a-actions"><button class="a-btn danger" onclick="deleteTimeline(${x.id})">🗑 Delete</button></div></td></tr>`).join('')}
+  // Skills table
+  const skt=document.getElementById('sk_tbody');
+  if(skt){const s=getSkills();document.getElementById('sk_count').textContent=s.length;skt.innerHTML=s.map(x=>`<tr><td>${x.icon}</td><td>${x.name}</td><td>${x.cat}</td><td><div style="display:flex;align-items:center;gap:.6rem"><div style="flex:1;height:4px;background:var(--bg3);border-radius:2px"><div style="width:${x.level}%;height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:2px"></div></div><span style="font-size:.72rem;color:var(--text3)">${x.level}%</span></div></td><td><div class="a-actions"><button class="a-btn danger" onclick="deleteSkill(${x.id})">🗑 Delete</button></div></td></tr>`).join('')}
+  // Messages
+  const mt=document.getElementById('msg_tbody');
+  if(mt){const m=getMessages();document.getElementById('msg_count').textContent=m.length;mt.innerHTML=m.map(x=>`<tr><td>${x.name}</td><td>${x.email}</td><td>${x.subject}</td><td style="font-size:.75rem">${x.date}</td><td><button class="a-btn" onclick="alert('From: '+${JSON.stringify(x.name+'\nEmail: '+x.email+'\n\n'+x.message)})">📖 Read</button></td></tr>`).join('')}
+}
+function refreshOverview(){
+  const s=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
+  s('ov-vids',getVideos().length);s('ov-projs',getProjects().length);s('ov-blogs',getBlog().length);s('ov-vault',getVault().length);
+  const al=document.getElementById('activityList');
+  if(al){const a=getActivity();al.innerHTML=a.length?a.slice(0,10).map(x=>`<div class="activity-row"><span>${x.msg}</span><span class="activity-time">${x.t}</span></div>`).join(''):'<div class="activity-row"><span style="color:var(--text3)">No activity yet</span></div>'}
+}
+function switchPanel(name,el){
+  document.querySelectorAll('.admin-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+  document.getElementById('p-'+name)?.classList.add('active');
+  el?.classList.add('active');
+  if(name==='vault')renderVaultFiles();
+  if(name==='cv'){buildCVPreview();applyContactInfo(getInfo())}
+}
+
+// ═══════════════════════════════════════════════════════
+// HERO STATS COUNTER
+// ═══════════════════════════════════════════════════════
+function updateHeroStats(){
+  const counter=(id,end)=>{
+    const el=document.getElementById(id);if(!el)return;
+    let c=0;const step=Math.max(1,Math.floor(end/40));
+    const iv=setInterval(()=>{c=Math.min(c+step,end);el.textContent=c+(end>1?'+':'');if(c>=end)clearInterval(iv)},30);
+  };
+  counter('statProj',getProjects().length);
+  counter('statVid',getVideos().length);
+  counter('statArt',getBlog().length);
+}
+
+// ═══════════════════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════════════════
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');document.body.style.overflow='';
+  if(id==='videoModal')document.getElementById('vmFrame').innerHTML='';
+}
+
+// ═══════════════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════════════
+let toastTimer=null;
+function showToast(msg,icon='✅',isErr=false){
+  clearTimeout(toastTimer);
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  document.getElementById('toastIcon').textContent=icon;
+  t.className='toast '+(isErr?'error':'success')+' show';
+  toastTimer=setTimeout(()=>{t.className='toast'},3800);
+}
+
+// ═══════════════════════════════════════════════════════
+// TYPING EFFECT
+// ═══════════════════════════════════════════════════════
+const phrases=['Building circuits that power the future ⚡','Electrical & Electronic Engineer in training 🎓','Creating engineering content for Africa 🌍','Transforming theory into practical solutions 🔌','From Chuka University to the World 🚀'];
+let pIdx=0,cIdx=0,deleting=false;
+function typeEffect(){
+  const el=document.getElementById('typeText');if(!el)return;
+  const ph=phrases[pIdx];
+  if(!deleting){el.textContent=ph.slice(0,++cIdx);if(cIdx===ph.length){deleting=true;setTimeout(typeEffect,2400);return}}
+  else{el.textContent=ph.slice(0,--cIdx);if(cIdx===0){deleting=false;pIdx=(pIdx+1)%phrases.length;setTimeout(typeEffect,400);return}}
+  setTimeout(typeEffect,deleting?26:68);
+}
+
+// ═══════════════════════════════════════════════════════
+// SCROLL OBSERVER
+// ═══════════════════════════════════════════════════════
+const scrollObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.skill-bar-fill[data-w],.toolkit-level-fill[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');
+    }
+  });
+},{threshold:.12});
+
+// ═══════════════════════════════════════════════════════
+// SCROLL EVENTS
+// ═══════════════════════════════════════════════════════
+window.addEventListener('scroll',()=>{
+  const scrolled=window.scrollY;const total=document.documentElement.scrollHeight-window.innerHeight;
+  const bar=document.getElementById('scrollBar');if(bar)bar.style.width=(scrolled/total*100)+'%';
+  const bt=document.getElementById('backTop');if(bt)bt.classList.toggle('show',scrolled>500);
+},{passive:true});
+
+// ═══════════════════════════════════════════════════════
+// THEME
+// ═══════════════════════════════════════════════════════
+function toggleTheme(){
+  const th=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=th;
+  document.getElementById('themeToggle').textContent=th==='dark'?'🌙':'☀️';
+  DB.set('theme',th);
+}
+
+// ═══════════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════════
+function scrollTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
+function clearInputs(ids){ids.forEach(id=>{const el=document.getElementById(id);if(el)el.value=''})}
+function ensureHTTPS(url){if(!url)return'#';return url.startsWith('http')?url:'https://'+url}
+
+// ═══════════════════════════════════════════════════════
+// SEED DATA
+// ═══════════════════════════════════════════════════════
+function seedVideos(){return[
+  {id:1,title:"Kirchhoff's Laws — Complete Guide",desc:"Step-by-step KVL and KCL derivations with practical circuit analysis examples.",cat:"Engineering Tutorials",views:1420,date:"Feb 2026",dur:"18:32",icon:"⚡",url:""},
+  {id:2,title:"Introduction to Fourier Series",desc:"Understanding Fourier series with real engineering signal processing applications.",cat:"Mathematics",views:908,date:"Feb 2026",dur:"24:10",icon:"📐",url:""},
+  {id:3,title:"Build an LED Flasher Circuit",desc:"Building an astable multivibrator on breadboard from scratch — practical lesson.",cat:"Electronics Practicals",views:1788,date:"Jan 2026",dur:"15:20",icon:"🔌",url:""},
+  {id:4,title:"How Three-Phase AC Power Works",desc:"Three-phase power generation, transmission and distribution explained clearly.",cat:"Engineering Tutorials",views:830,date:"Dec 2025",dur:"22:05",icon:"🔋",url:""},
+  {id:5,title:"Arduino Sensor Integration Guide",desc:"Using DHT11, LDR and IR sensors with Arduino Uno — full practical walkthrough.",cat:"Electronics Practicals",views:1120,date:"Nov 2025",dur:"20:40",icon:"🤖",url:""},
+  {id:6,title:"Chuka EEE Program Overview",desc:"What to expect in the Electrical Engineering program and how to excel in it.",cat:"University Learning",views:2340,date:"Oct 2025",dur:"12:55",icon:"🎓",url:""},
+  {id:7,title:"Python for Engineers — Getting Started",desc:"Introduction to Python programming specifically for electrical engineering students.",cat:"Technology",views:672,date:"Sep 2025",dur:"17:15",icon:"🐍",url:""},
+  {id:8,title:"Ohm's Law & Circuit Fundamentals",desc:"The foundational laws of electrical circuits explained with hands-on examples.",cat:"Engineering Tutorials",views:3210,date:"Aug 2025",dur:"10:45",icon:"⚡",url:""},
+]}
+function seedProjects(){return[
+  {id:1,title:"Automatic Solar Charge Controller",desc:"PWM-based solar charge controller for 12V lead-acid batteries using LM393 comparators and MOSFET switching to regulate charging voltage and prevent overcharging.",tech:["Arduino","C++","LTSpice","PCB Design","KiCad"],icon:"☀️",featured:true,status:"Completed",github:"",demo:"",date:"Feb 2026"},
+  {id:2,title:"Digital Voltmeter & Ammeter",desc:"LCD-based digital multimeter using Arduino and ACS712 current sensor. Accurate to ±0.1V with real-time serial display and data logging.",tech:["Arduino","C++","LCD","ACS712"],icon:"🔌",featured:false,status:"Completed",github:"",demo:"",date:"Jan 2026"},
+  {id:3,title:"Smart Traffic Light System",desc:"Programmable traffic light controller using Arduino and 74HC595 shift registers with pedestrian crossing mode and configurable timings.",tech:["Arduino","C++","74HC595","Logic Gates"],icon:"🚦",featured:false,status:"Completed",github:"",demo:"",date:"Dec 2025"},
+  {id:4,title:"Home Energy Monitor (IoT)",desc:"Real-time electricity consumption monitor using ZMPT101B and ACS712 sensors, sending live data to a web dashboard via ESP8266 WiFi module.",tech:["ESP8266","MQTT","Node.js","ZMPT101B"],icon:"📊",featured:false,status:"In Progress",github:"",demo:"",date:"Nov 2025"},
+  {id:5,title:"FM Transmitter Circuit",desc:"Variable frequency FM transmitter using a Colpitts oscillator circuit designed and simulated in Proteus before hardware implementation.",tech:["Proteus","PCB","RF Electronics"],icon:"📻",featured:false,status:"Completed",github:"",demo:"",date:"Oct 2025"},
+  {id:6,title:"Line-Following Robot",desc:"Autonomous line-following robot using IR sensors and L298N motor driver, programmed in C++ on Arduino with PID control for smooth path tracking.",tech:["Arduino","C++","L298N","IR Sensors","PID"],icon:"🤖",featured:false,status:"Completed",github:"",demo:"",date:"Sep 2025"},
+]}
+function seedBlog(){return[
+  {id:1,title:"Understanding Three-Phase Power Systems",cat:"Electrical Engineering",excerpt:"A deep dive into how three-phase AC power works and why it is preferred for industrial applications worldwide.",content:"Three-phase power is the global standard for industrial and commercial power distribution.\n\nUnlike single-phase systems, three-phase systems deliver power more efficiently with less conductor material.\n\nIn a balanced three-phase system, three voltages are equal in magnitude and separated by 120° in phase. This produces constant total power delivery, unlike single-phase where power pulses twice per cycle.\n\nKey advantages:\n• Higher power density for the same conductor size\n• More efficient electric motors\n• Smoother torque in rotating machinery\n• Lower transmission losses over long distances\n• Simpler rectification to DC\n\nAs electrical engineers, mastering three-phase analysis is fundamental to working with industrial equipment, power stations, and distribution systems.\n\nThe mathematics involves phasor analysis, symmetrical components, and per-unit systems — all essential tools in our engineering toolkit.",readTime:8,icon:"⚡",date:"Mar 2026"},
+  {id:2,title:"My Engineering Journey at Chuka University",cat:"University Life",excerpt:"From Langa Langa Secondary School to Chuka University — the story of my path into electrical engineering.",content:"When I sat for my KCSE examinations at Langa Langa Secondary School, I knew engineering was my calling.\n\nThe satisfaction of understanding how circuits work — how invisible electrons flow through conductors to power our modern world — was enough to guide me toward electrical engineering.\n\nAfter achieving a B+ in KCSE, I joined Chuka University to study Electrical and Electronic Engineering. Every semester brings new discoveries — from circuit analysis to power systems, from embedded programming to telecommunications.\n\nThe engineering laboratories are where theory meets practice. Building circuits, running simulations in MATLAB and Proteus, programming microcontrollers — these are the experiences that shape a real engineer.\n\nMy advice to anyone considering EEE: embrace the mathematics. Calculus, differential equations, and linear algebra are not your enemies — they are the precise language of engineering.\n\nKeep building. Keep experimenting. Keep sharing knowledge.",readTime:6,icon:"🎓",date:"Feb 2026"},
+  {id:3,title:"Arduino vs PIC: Which Microcontroller for Beginners?",cat:"Electronics",excerpt:"A practical comparison of Arduino and PIC microcontrollers for engineering students just getting started.",content:"One of the most common questions from engineering students is: should I start with Arduino or PIC microcontrollers?\n\nBoth platforms have their strengths, and the choice often depends on your goals.\n\nARDUINO — Best for Beginners\n• C/C++ based, large community, thousands of libraries\n• Simple USB programming, no programmer needed\n• Excellent for prototyping and rapid development\n• Less efficient than PIC for production systems\n\nPIC MICROCONTROLLERS — Industry Standard\n• Used heavily in industry and embedded systems\n• More complex setup, MPLAB IDE + programmer required\n• Lower power consumption, better for final products\n• Essential knowledge for professional embedded engineers\n\nMy recommendation: Start with Arduino to build confidence and understanding. Then learn PIC to understand what happens at the hardware level.\n\nBoth platforms are used in my projects at Chuka University, and both will serve you well in your engineering career.",readTime:7,icon:"🤖",date:"Jan 2026"},
+]}
+function seedTimeline(){return[
+  {id:1,title:"Langa Langa Secondary School — KCSE B+",inst:"Langa Langa Secondary School",date:"2018 – 2021",desc:"Completed Kenya Certificate of Secondary Education with a B+ grade. Excelled in Mathematics, Physics, Chemistry and Computer Studies. Built the strong scientific foundation essential for engineering.",tags:["KCSE B+","Mathematics","Physics","Chemistry"]},
+  {id:2,title:"B.Sc Electrical & Electronic Engineering",inst:"Chuka University, Tharaka-Nithi",date:"2022 – Present",desc:"Currently pursuing my engineering degree with focus on power systems, analog & digital electronics, telecommunications, control systems, and microprocessor engineering. Actively involved in practical labs and independent engineering projects.",tags:["EEE Degree","Power Systems","Electronics","Control Systems","Embedded Systems"]},
+  {id:3,title:"Technology & Engineering Content Creator",inst:"YouTube & Engineering Blog",date:"2023 – Present",desc:"Creating educational videos and technical articles about electrical engineering, electronics, and mathematics to help students across Kenya and Africa understand complex engineering concepts.",tags:["Content Creation","Education","YouTube","Engineering Blog"]},
+]}
+function seedSkills(){return[
+  {id:1,name:"MATLAB",icon:"⚡",level:82,cat:"Engineering Software"},
+  {id:2,name:"Proteus",icon:"🔬",level:78,cat:"Engineering Software"},
+  {id:3,name:"KiCad",icon:"🔌",level:72,cat:"Engineering Software"},
+  {id:4,name:"LTSpice",icon:"📐",level:75,cat:"Engineering Software"},
+  {id:5,name:"Python",icon:"🐍",level:76,cat:"Programming"},
+  {id:6,name:"C / C++",icon:"💻",level:71,cat:"Programming"},
+  {id:7,name:"Arduino",icon:"🤖",level:88,cat:"Hardware"},
+  {id:8,name:"AutoCAD",icon:"📏",level:65,cat:"Engineering Software"},
+  {id:9,name:"Node.js",icon:"🟢",level:58,cat:"Programming"},
+  {id:10,name:"MS Excel",icon:"📊",level:80,cat:"Other"},
+]}
+
+// ═══════════════════════════════════════════════════════
+// RENDER ALL
+// ═══════════════════════════════════════════════════════
+function renderAll(){
+  renderVideos();renderProjects();renderBlog();renderTimeline();renderSkills();
+  applyContactInfo(getInfo());updateHeroStats();
+}
+
+// ═══════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{
+  // Restore theme
+  const savedTheme=DB.get('theme')||'dark';
+  document.documentElement.dataset.theme=savedTheme;
+  document.getElementById('themeToggle').textContent=savedTheme==='dark'?'🌙':'☀️';
+  document.getElementById('themeToggle').addEventListener('click',toggleTheme);
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+  // Render public site
+  renderAll();
+  // Start typing
+  setTimeout(typeEffect,800);
+  // Observe scroll-reveal elements
+  document.querySelectorAll('.reveal').forEach(el=>scrollObserver.observe(el));
+  // Drag-drop vault
+  const uz=document.getElementById('uploadZone');
+  if(uz){
+    uz.addEventListener('dragover',e=>{e.preventDefault();uz.classList.add('dragover')});
+    uz.addEventListener('dragleave',()=>uz.classList.remove('dragover'));
+    uz.addEventListener('drop',e=>{e.preventDefault();uz.classList.remove('dragover');const f=e.dataTransfer.files[0];if(f){const inp=document.getElementById('vaultFileInput');const dt=new DataTransfer();dt.items.add(f);inp.files=dt.files;handleVaultUpload(inp)}});
+  }
+});
+</script>
+</body>
+</html>
